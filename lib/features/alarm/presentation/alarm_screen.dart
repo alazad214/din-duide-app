@@ -13,7 +13,6 @@ class AlarmScreen extends StatefulWidget {
 
 class _AlarmScreenState extends State<AlarmScreen> {
   int selectedItem = 0;
-
   List weekList = ['Sat', 'Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri'];
   List<Map> prayerTime = [
     {'name': 'Imsaak', 'time': '5:38'},

@@ -1,7 +1,6 @@
+import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../notification/notification_screen.dart';
 
@@ -77,7 +76,7 @@ class HomeHeader extends StatelessWidget {
                     color: Colors.white24,
                     shape: BoxShape.circle,
                   ),
-                  child: Image.asset(AssetsIcons.notification),
+                  child:const Icon(Icons.menu, color: AppColors.cWhite)
                 ),
               ),
             ],

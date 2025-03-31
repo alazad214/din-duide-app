@@ -1,15 +1,14 @@
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../../common_widgets/auth_button.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
-import 'edit_profile.dart' show EditProfileScreen;
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                 image: AssetsIcons.profile,
                 title: 'Personal Info',
                 ontap: () {
-                      Get.to(()=>const EditProfileScreen());
+                    
                 },
               ),
               buildProfileTile(

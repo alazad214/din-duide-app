@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../../constants/text_font_style.dart';
 import '../../../helpers/ui_helpers.dart';
-import '../../authentication/presentation/login_screen.dart';
+import '../../bottom_nav/presentation/navigation_screen.dart';
 import '../widgets/onboarding_button.dart';
 import '../widgets/onboarding_top_section.dart';
 
@@ -32,7 +32,7 @@ class OnboardingScreen2 extends StatelessWidget {
          const Spacer(),
           OnboardingButton(
             onTap: () {
-              Get.to(() =>const LoginScreen());
+              Get.to(() => NavigationScreen ());
             },
           ),
         ],

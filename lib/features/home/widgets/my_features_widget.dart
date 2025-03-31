@@ -30,6 +30,15 @@ class MyFeaturesWidgets extends StatelessWidget {
           buildFeaturesItem('Jakat', AssetsIcons.jakat, () {
             Get.to(() => const JakatScreen());
           }),
+          buildFeaturesItem('Quran', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
+          buildFeaturesItem('Hatish', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
+          buildFeaturesItem('Namaz', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
         ],
       ),
     );
@@ -57,7 +66,7 @@ class MyFeaturesWidgets extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style:const TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

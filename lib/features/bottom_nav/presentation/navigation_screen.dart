@@ -1,14 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
+import '../../settings/presentation/settings_screen.dart';
 import '../../alarm/presentation/alarm_screen.dart';
 import '../../home/presentation/home_screen.dart';
-import '../../profile/presentation/profile_screen.dart';
 import '../../salat/presentation/salat_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
+  const NavigationScreen({super.key});
+
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
 }
@@ -22,7 +23,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
     });
   }
 
-  List pages = [const HomeScreen(),const SalatScreen(),const AlarmScreen(),const ProfileScreen()];
+  List pages = [
+    const HomeScreen(),
+    const SalatScreen(),
+    const AlarmScreen(),
+    const SettingsScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
         bottomNavigationBar: Container(
           padding: EdgeInsets.symmetric(vertical: 10.h),
-          decoration:const BoxDecoration(color: AppColors.cWhite),
+          decoration: const BoxDecoration(color: AppColors.cWhite),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(4, (index) {
@@ -56,7 +62,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                               ? AppColors.primaryColor
                               : Colors.black87,
                     ),
-                  const  SizedBox(height: 5),
+                    const SizedBox(height: 5),
 
                     Text(
                       labels[index],
@@ -80,8 +86,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
 }
 
-
-List  Images = [
+List Images = [
   AssetsIcons.home,
   AssetsIcons.salat,
   AssetsIcons.alarm,

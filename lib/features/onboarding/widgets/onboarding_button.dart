@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
-import '../../authentication/presentation/login_screen.dart';
+import '../../bottom_nav/presentation/navigation_screen.dart';
 
 
 class OnboardingButton extends StatelessWidget {
@@ -23,7 +23,7 @@ class OnboardingButton extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-             Get.to(()=>const LoginScreen());
+             Get.to(()=> NavigationScreen());
             },
             child: Text(
               'Skip',
