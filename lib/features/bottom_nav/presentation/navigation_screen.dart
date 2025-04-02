@@ -60,7 +60,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       color:
                           selectedIndex == index
                               ? AppColors.primaryColor
-                              : Colors.black87,
+                              : Colors.black,
                     ),
                     const SizedBox(height: 5),
 
@@ -68,7 +68,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       labels[index],
                       style: TextStyle(
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
                         color:
                             selectedIndex == index
                                 ? AppColors.primaryColor
@@ -88,9 +88,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
 List Images = [
   AssetsIcons.home,
+  AssetsIcons.category,
   AssetsIcons.salat,
-  AssetsIcons.alarm,
-  AssetsIcons.profile,
+  AssetsIcons.settings,
 ];
 
-List<String> labels = ["Home", "Salat", "Alarm", "Profile"];
+List<String> labels = ["Home", "Features", "Salat", "Settings"];

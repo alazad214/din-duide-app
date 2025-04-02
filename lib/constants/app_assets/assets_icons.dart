@@ -13,10 +13,12 @@ class AssetsIcons {
   static String home = 'assets/icons/home.png';
   static String salat = 'assets/icons/salat.png';
   static String alarm = 'assets/icons/alarm.png';
-  static String profile = 'assets/icons/profile.png';
+  static String settings = 'assets/icons/settings.png';
   static String play = 'assets/icons/play.png';
   static String help = 'assets/icons/help.png';
   static String privacy = 'assets/icons/privacy.png';
   static String logout = 'assets/icons/logout.png';
   static String lock = 'assets/icons/lock.png';
+  static String ai = 'assets/icons/ai.png';
+  static String category = 'assets/icons/category.png';
 }
