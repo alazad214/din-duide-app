@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:din_guide_app/features/home/widgets/home_header.dart' show HomeHeader;
+import 'package:din_guide_app/features/home/widgets/home_header.dart'
+    show HomeHeader;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -30,28 +31,28 @@ class HomeScreen extends StatelessWidget {
                   image: AssetImage(AssetsImage.bg2),
                   fit: BoxFit.cover,
                 ),
-                borderRadius:const BorderRadius.only(
-                  bottomRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(12),
                 ),
               ),
 
               child: const SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Center(child: HomeHeader()),
                 ),
               ),
             ),
 
             Padding(
-              padding:const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   buildCarouselSlider(context, carouselProvider),
-                 const SizedBox(height: 20),
-                 const SizedBox(
+                  const SizedBox(height: 20),
+                  const SizedBox(
                     width: double.infinity,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                         Text(
                           'Our Features',
                           style: TextStyle(
-                            color:  Color(0xFF222222),
+                            color: Color(0xFF222222),
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
                           ),
@@ -86,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          const  SizedBox(height: 50),
+            const SizedBox(height: 50),
           ],
         ),
       ),
@@ -115,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
           options: CarouselOptions(
-            autoPlayInterval:const Duration(seconds: 1),
+            autoPlayInterval: const Duration(seconds: 1),
             viewportFraction: 1,
             autoPlay: false,
             height: 160.h,

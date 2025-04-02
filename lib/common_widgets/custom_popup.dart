@@ -35,7 +35,7 @@ void customPopup(
                 textAlign: TextAlign.center,
                 style: TextFontStyle.textStyle16w400c5C5C5C,
               ),
-              UIHelper.verticalSpace(24.h),
+              UIHelper.widthSpace(24.h),
               Row(
                 children: [
                   Expanded(
@@ -49,7 +49,7 @@ void customPopup(
                         color: Colors.transparent,
                         textStyle: TextFontStyle.textStyle18w500c333333),
                   ),
-                  UIHelper.horizontalSpace(16.w),
+                  UIHelper.widthSpace(16.w),
                   Expanded(
                     child: customButton(
                       name: buttonName,

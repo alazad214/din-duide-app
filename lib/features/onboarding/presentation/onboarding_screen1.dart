@@ -16,28 +16,35 @@ class OnboardingScreen1 extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          onBoardingTopSection(imageUrl: AssetsImage.onboarding),
-          UIHelper.verticalSpace(98.h),
-          Text('Explore  Our App', style: TextFontStyle.headline32w600c333333),
-          UIHelper.verticalSpace(12.h),
-          Text(
-            'You have successfully change password.',
-            style: TextFontStyle.headline16w400c333333,
+          OnBoardingTopSection(imageUrl: AssetsImage.onboarding),
+
+          Padding(
+            padding: EdgeInsets.all(UIHelper.kdefaultPadding()),
+            child: Column(
+              children: [
+                Text(
+                  'Explore  Our App',
+                   overflow: TextOverflow.ellipsis,
+                  style: TextFontStyle.headline32w600c333333,
+                ),
+                UIHelper.heightSpace(12.h),
+                Text(
+                  textAlign: TextAlign.center,
+                  'Access the Quran, Hadith, and other Islamic resources in one place and make your journey easier.',
+                  style: TextFontStyle.headline16w400c333333,
+                ),
+              ],
+            ),
           ),
-          Text(
-            'Please use the new password when Sign in.',
-            style: TextFontStyle.headline16w400c333333,
-          ),
+
           const Spacer(),
           OnboardingButton(
             onTap: () {
-              Get.to(() =>const OnboardingScreen2());
+              Get.to(() => const OnboardingScreen2());
             },
           ),
         ],
       ),
     );
   }
-
-
 }

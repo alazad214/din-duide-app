@@ -46,7 +46,7 @@ class AuthCustomAppBar extends StatelessWidget {
                   ),
                 )
                 : const SizedBox.shrink(),
-            UIHelper.horizontalSpace(12.w),
+            UIHelper.widthSpace(12.w),
             Text(
               title,
               style: const TextStyle(

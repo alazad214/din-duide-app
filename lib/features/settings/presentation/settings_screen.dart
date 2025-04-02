@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import '../../../common_widgets/auth_button.dart';
 import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_assets/assets_image.dart';
+import '../../../constants/app_assets/networks_image.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
 
@@ -18,12 +17,12 @@ class SettingsScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: Column(
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(AssetsImage.avatar),
+                backgroundImage: NetworkImage(NetworksImage.avatar),
                 radius: 55,
               ),
             const SizedBox(height: 10),

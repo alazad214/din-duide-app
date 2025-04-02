@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,22 +16,32 @@ class OnboardingScreen2 extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          onBoardingTopSection(imageUrl: AssetsImage.onboarding),
-          UIHelper.verticalSpace(98.h),
-          Text('Explore  Our App', style: TextFontStyle.headline32w600c333333),
-          UIHelper.verticalSpace(12.h),
-          Text(
-            'You have successfully change password.',
-            style: TextFontStyle.headline16w400c333333,
+          OnBoardingTopSection(imageUrl: AssetsImage.onboarding2),
+          Padding(
+            padding: EdgeInsets.all(UIHelper.kdefaultPadding()),
+            child: Column(
+              children: [
+                Text(
+                  'Din Guide-Your Guide',
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextFontStyle.headline32w600c333333,
+                ),
+                UIHelper.heightSpace(10.h),
+                Text(
+                  textAlign: TextAlign.center,
+                  'Here, you’ll find a collection of the Quran, Hadith, and Islamic teachings. Start your journey with us today.',
+                  style: TextFontStyle.headline16w400c333333,
+                ),
+              ],
+            ),
           ),
-          Text(
-            'Please use the new password when Sign in.',
-            style: TextFontStyle.headline16w400c333333,
-          ),
-         const Spacer(),
+          const Spacer(),
+
           OnboardingButton(
             onTap: () {
-              Get.to(() => NavigationScreen ());
+              Get.to(() => const NavigationScreen());
             },
           ),
         ],

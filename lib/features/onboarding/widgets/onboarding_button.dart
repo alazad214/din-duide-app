@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -7,12 +6,9 @@ import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
 import '../../bottom_nav/presentation/navigation_screen.dart';
 
-
 class OnboardingButton extends StatelessWidget {
   final VoidCallback onTap;
-  const OnboardingButton({
-    super.key, required this.onTap,
-  });
+  const OnboardingButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +19,23 @@ class OnboardingButton extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-             Get.to(()=> NavigationScreen());
+              Get.to(() => const NavigationScreen());
             },
-            child: Text(
-              'Skip',
-              style: TextFontStyle.headline16w600c333333
-              
-            ),
+            child: Text('Skip', style: TextFontStyle.headline16w600c333333),
           ),
           GestureDetector(
             onTap: onTap,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7.r),
-                color: AppColors.primaryColor   
+                color: AppColors.primaryColor,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(AssetsIcons.arrorRight)
+                padding: const EdgeInsets.all(10.0),
+                child: Image.asset(AssetsIcons.arrorRight),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

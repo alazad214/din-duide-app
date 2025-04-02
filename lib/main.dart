@@ -1,4 +1,4 @@
-import 'package:din_guide_app/welcome_screen.dart';
+import 'package:din_guide_app/features/splash/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
