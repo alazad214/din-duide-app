@@ -1,3 +1,4 @@
+import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_icons.dart';
@@ -15,9 +16,21 @@ class MyFeaturesWidgets extends StatelessWidget {
       child: Wrap(
         runAlignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 18,
-        runSpacing: 16,
+        spacing: 15,
+        runSpacing: 15,
         children: [
+          buildFeaturesItem('Quran', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
+          buildFeaturesItem('Namaz', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
+          buildFeaturesItem('Roja', AssetsIcons.jakat, () {
+            Get.to(() => const JakatScreen());
+          }),
+          buildFeaturesItem('Haj', AssetsIcons.dua, () {
+            Get.to(() => const DuaPlaylistScreen());
+          }),
           buildFeaturesItem('Dua', AssetsIcons.dua, () {
             Get.to(() => const DuaPlaylistScreen());
           }),
@@ -30,13 +43,8 @@ class MyFeaturesWidgets extends StatelessWidget {
           buildFeaturesItem('Jakat', AssetsIcons.jakat, () {
             Get.to(() => const JakatScreen());
           }),
-          buildFeaturesItem('Quran', AssetsIcons.jakat, () {
-            Get.to(() => const JakatScreen());
-          }),
-          buildFeaturesItem('Hatish', AssetsIcons.jakat, () {
-            Get.to(() => const JakatScreen());
-          }),
-          buildFeaturesItem('Namaz', AssetsIcons.jakat, () {
+
+          buildFeaturesItem('More', AssetsIcons.jakat, () {
             Get.to(() => const JakatScreen());
           }),
         ],
@@ -54,9 +62,9 @@ class MyFeaturesWidgets extends StatelessWidget {
           Container(
             height: 100,
             width: Get.width / 4,
-            padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 11),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             decoration: BoxDecoration(
-              color: const Color(0xFFE9F2EF),
+              color: AppColors.cE8E8E8,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
@@ -67,9 +75,9 @@ class MyFeaturesWidgets extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: AppColors.c818181,
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ],

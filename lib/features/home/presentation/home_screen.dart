@@ -1,7 +1,12 @@
 import 'dart:developer';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:din_guide_app/common_widgets/custom_button.dart';
+import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
+import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/constants/text_font_style.dart';
 import 'package:din_guide_app/features/home/widgets/home_header.dart'
     show HomeHeader;
+import 'package:din_guide_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -19,6 +24,7 @@ class HomeScreen extends StatelessWidget {
     final carouselProvider = Provider.of<CarouselProvider>(context);
     log('build');
     return Scaffold(
+      backgroundColor: AppColors.cWhite,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -52,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   buildCarouselSlider(context, carouselProvider),
                   const SizedBox(height: 20),
-                  const SizedBox(
+                  SizedBox(
                     width: double.infinity,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -60,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       spacing: 16,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 364,
                           child: Text(
                             'Prayer’s Time',
@@ -71,8 +77,8 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        PrayersTime(),
-                        Text(
+                        const PrayersTime(),
+                        const Text(
                           'Our Features',
                           style: TextStyle(
                             color: Color(0xFF222222),
@@ -80,7 +86,62 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        MyFeaturesWidgets(),
+                        const MyFeaturesWidgets(),
+                        const Text(
+                          'Ask AI Bot',
+                          style: TextStyle(
+                            color: Color(0xFF222222),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Container(
+                          height: 130,
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(AssetsIcons.ai, height: 70),
+                              Flexible(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Ask Islamic consecp to AI bot.',
+                                        textAlign: TextAlign.center,
+                                        style:
+                                            TextFontStyle
+                                                .textStyle18w600c333333,
+                                      ),
+                                      UIHelper.heightSmall,
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                                        child: customButton(
+                                          height: 30,
+                                          color: AppColors.secondaryColor2,
+                                          name: 'Open',
+                                          onCallBack: () {},
+                                          context: context,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Image.asset(AssetsImage.askme, height: 65),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

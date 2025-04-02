@@ -15,6 +15,7 @@ class AssetsImage {
   static String magrib = 'assets/images/magrib.png';
   static String isha = 'assets/images/isha.png';
   static String islamicBot = 'assets/images/islamic_bot.png';
+  static String askme = 'assets/images/askme.png';
 
   //App Logo-->
   static String logo = 'assets/logo/logo.png';

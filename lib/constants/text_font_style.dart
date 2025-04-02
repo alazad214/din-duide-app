@@ -136,6 +136,13 @@ class TextFontStyle {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
   );
+  static var textStyle18w600c333333 = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 18.sp,
+    color: AppColors.cWhite,
+    fontWeight: FontWeight.w600,
+  
+  );
   static var textStyle16w700primaryColor = TextStyle(
     fontFamily: 'HelveticaNeueRoman.otf',
     fontSize: 16.sp,
