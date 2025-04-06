@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_colors.dart';
 
-class onBoardingTopSection extends StatelessWidget {
+class OnBoardingTopSection extends StatelessWidget {
   final String imageUrl;
-  const onBoardingTopSection({super.key, required this.imageUrl});
+  const OnBoardingTopSection({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 390.h,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -19,13 +18,8 @@ class onBoardingTopSection extends StatelessWidget {
         color: AppColors.primaryColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.only(
-          top: 101,
-          bottom: 51,
-          right: 46,
-          left: 46,
-        ),
-        child: Image.asset(imageUrl),
+        padding: const EdgeInsets.all(32),
+        child: SafeArea(child: Image.asset(imageUrl, height: 250,)),
       ),
     );
   }

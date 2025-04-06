@@ -1,51 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../constants/app_colors.dart';
-import 'navigation_service.dart';
-
 final class UIHelper {
   UIHelper._();
 
-  static final double _verticalSpaceSmall = 16.0.w;
-  static final double _verticalSpaceMedium = 20.0.w;
+  static final double _heightSmall = 10.w;
+  static final double _heightMedium = 16.w;
+  static final double _heightMediumLarge = 22.w;
+  static final double _heightLarge = 22.w;
 
-  static final double _verticalSpaceMediumLarge = 24.0.w;
-  static final double _verticalSpaceSemiLarge = 40.0.w;
-  static final double _verticalSpaceLarge = 60.0.w;
-  static final double _verticalSpaceExtraLarge = 100.0.w;
+  static final double _widthSmall = 6.h;
+  static final double _widthMedium = 12.h;
+  static final double _widthMediumLarge = 18.h;
+  static final double __horizontalSpaceLarge = 24.h;
 
-  static final double _horizontalSpaceSmall = 10.0.h;
-  static final double _horizontalSpaceMedium = 20.0.h;
-  static final double _horizontalSpaceSemiLarge = 40.0.h;
-  static final double _horizontalSpaceLarge = 60.0.h;
+  static Widget widthSmall = SizedBox(width: _widthSmall);
+  static Widget widthMedium = SizedBox(width: _widthMedium);
+  static Widget widthMediumLarge = SizedBox(width: _widthMediumLarge);
+  static Widget horizontalSpaceLarge = SizedBox(width: __horizontalSpaceLarge);
 
-  static Widget verticalSpaceSmall = SizedBox(height: _verticalSpaceSmall);
-  static Widget verticalSpaceMedium = SizedBox(height: _verticalSpaceMedium);
-  static Widget verticalSpaceMediumLarge =
-      SizedBox(height: _verticalSpaceMediumLarge);
-  static Widget verticalSpaceSemiLarge =
-      SizedBox(height: _verticalSpaceSemiLarge);
-  static Widget verticalSpaceLarge = SizedBox(height: _verticalSpaceLarge);
-  static Widget verticalSpaceExtraLarge =
-      SizedBox(height: _verticalSpaceExtraLarge);
+  static Widget heightSmall = SizedBox(height: _heightSmall);
+  static Widget heightMedium = SizedBox(height: _heightMedium);
+  static Widget heightMediumLarge = SizedBox(height: _heightMediumLarge);
+  static Widget heightLarge = SizedBox(height: _heightLarge);
 
-  static Widget horizontalSpaceSmall = SizedBox(width: _horizontalSpaceSmall);
-  static Widget horizontalSpaceMedium = SizedBox(width: _horizontalSpaceMedium);
-  static Widget horizontalSpaceSemiLarge =
-      SizedBox(width: _horizontalSpaceSemiLarge);
-  static Widget horizontalSpaceLarge = SizedBox(width: _horizontalSpaceLarge);
+  static Widget widthSpace(double width) => SizedBox(width: width);
+  static Widget heightSpace(double height) => SizedBox(height: height);
 
-  static Widget horizontalSpace(double width) => SizedBox(width: width);
-  static Widget verticalSpace(double height) => SizedBox(height: height);
-
-  static double safePadding() =>
-      MediaQuery.of(NavigationService.context).padding.top;
-
-  static Widget customDivider() => Container(
-        height: .6.h,
-        color: AppColors.c000000.withOpacity(.3),
-        width: double.infinity,
-      );
-  static double kDefaulutPadding() => 20.sp;
+  static double kdefaultPadding() => 20.sp;
+  static double kPaddingSmall() => 10.sp;
+  static double kPaddingMedium() => 16.sp;
+  static double kPaddingLarge() => 24.sp;
 }

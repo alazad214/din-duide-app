@@ -1,14 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
+import '../../settings/presentation/settings_screen.dart';
 import '../../alarm/presentation/alarm_screen.dart';
 import '../../home/presentation/home_screen.dart';
-import '../../profile/presentation/profile_screen.dart';
-import '../../salat/presentation/salat_screen.dart';
+import '../../salat/presentation/features_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
+  const NavigationScreen({super.key});
+
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
 }
@@ -22,7 +23,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
     });
   }
 
-  List pages = [const HomeScreen(),const SalatScreen(),const AlarmScreen(),const ProfileScreen()];
+  List pages = [
+    const HomeScreen(),
+    const FeaturesScreen(),
+    const AlarmScreen(),
+    const SettingsScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
         bottomNavigationBar: Container(
           padding: EdgeInsets.symmetric(vertical: 10.h),
-          decoration:const BoxDecoration(color: AppColors.cWhite),
+          decoration: const BoxDecoration(color: AppColors.cWhite),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(4, (index) {
@@ -54,15 +60,15 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       color:
                           selectedIndex == index
                               ? AppColors.primaryColor
-                              : Colors.black87,
+                              : Colors.black,
                     ),
-                  const  SizedBox(height: 5),
+                    const SizedBox(height: 5),
 
                     Text(
                       labels[index],
                       style: TextStyle(
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
                         color:
                             selectedIndex == index
                                 ? AppColors.primaryColor
@@ -80,12 +86,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
 }
 
-
-List  Images = [
+List Images = [
   AssetsIcons.home,
+  AssetsIcons.category,
   AssetsIcons.salat,
-  AssetsIcons.alarm,
-  AssetsIcons.profile,
+  AssetsIcons.settings,
 ];
 
-List<String> labels = ["Home", "Salat", "Alarm", "Profile"];
+List<String> labels = ["Home", "Features", "Salat", "Settings"];

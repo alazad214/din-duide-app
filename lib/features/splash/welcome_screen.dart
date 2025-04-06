@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'constants/app_assets/assets_image.dart';
-import 'constants/text_font_style.dart';
-import 'helpers/checkLogin.dart';
+import '../../constants/app_assets/assets_image.dart';
+import '../../helpers/check_login.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -32,11 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Center(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Text('Logo', style: TextFontStyle.headline40w700cWhite),
-                  ],
-                ),
+                child: Column(children: [Image.asset(AssetsImage.logoPng)]),
               ),
             ),
           ),

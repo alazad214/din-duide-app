@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_image.dart';
+import '../../../constants/app_assets/networks_image.dart';
 import '../../../constants/app_colors.dart';
 import '../../../helpers/navigation_service.dart';
 
@@ -40,7 +41,7 @@ class _DuaDetailsScreenState extends State<DuaDetailsScreen> {
                         onPressed: () {
                           NavigationService.goBack;
                         },
-                        icon: Icon(Icons.arrow_back, color: AppColors.cWhite),
+                        icon: const Icon(Icons.arrow_back, color: AppColors.cWhite),
                       ),
 
                     const  Text(
@@ -71,7 +72,7 @@ class _DuaDetailsScreenState extends State<DuaDetailsScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Image.network(
-                      AssetsImage.sliderImage,
+                      NetworksImage.sliderImage,
                       fit: BoxFit.cover,
                     ),
                   ),

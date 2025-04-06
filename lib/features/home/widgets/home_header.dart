@@ -1,12 +1,11 @@
+import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_assets/assets_image.dart';
-import '../../notification/notification_screen.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  final VoidCallback drawerOntap;
+   const HomeHeader({super.key, required this.drawerOntap});
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,73 +16,53 @@ class HomeHeader extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 114,
             children: [
               Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 6,
                 children: [
                   Container(
-                    width: 50,
-                    height: 50,
-                    decoration: ShapeDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(AssetsImage.avatar),
-                        fit: BoxFit.cover,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.primaryColor,
+                        width: 3,
                       ),
-                      shape:const OvalBorder(),
                     ),
-                  ),
-                const  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 2,
-                    children: [
-                      Text(
-                        'Hey Albert!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-
-                          fontWeight: FontWeight.w600,
+                    child: Container(
+                      width: 45,
+                      height: 45,
+                      decoration: ShapeDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(AssetsImage.islamicBot),
+                          fit: BoxFit.cover,
                         ),
+                        shape: const OvalBorder(),
                       ),
-                      Text(
-                        'London',
-                        style: TextStyle(
-                          color:  Color(0xFFE8E8E8),
-
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
               InkWell(
-                onTap: (){
-                  Get.to(()=>const NotificationScreen());
-                },
+                onTap:drawerOntap,
                 child: Container(
                   height: 50,
                   width: 50,
-                  decoration:const BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white24,
                     shape: BoxShape.circle,
                   ),
-                  child: Image.asset(AssetsIcons.notification),
+                  child: const Icon(Icons.menu, color: AppColors.cWhite),
                 ),
               ),
             ],
           ),
         ),
-      const  Text(
+        const SizedBox(height: 16),
+        const Text(
           'As-salamu alaykum',
           style: TextStyle(
             color: Colors.white,
