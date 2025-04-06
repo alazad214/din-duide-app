@@ -1,7 +1,7 @@
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_icons.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import '../../dua/presentation/dua_playlist_screen.dart';
 import '../../tasbih/tasbih_screen.dart';
 import '../presentation/allah_name_screen.dart';
@@ -16,74 +16,87 @@ class MyFeaturesWidgets extends StatelessWidget {
       child: Wrap(
         runAlignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 15,
-        runSpacing: 15,
+        spacing: 8,
+        runSpacing: 10,
         children: [
-          buildFeaturesItem('Quran', AssetsIcons.jakat, () {
+          buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
             Get.to(() => const JakatScreen());
-          }),
-          buildFeaturesItem('Namaz', AssetsIcons.jakat, () {
-            Get.to(() => const JakatScreen());
-          }),
-          buildFeaturesItem('Roja', AssetsIcons.jakat, () {
-            Get.to(() => const JakatScreen());
-          }),
-          buildFeaturesItem('Haj', AssetsIcons.dua, () {
-            Get.to(() => const DuaPlaylistScreen());
-          }),
-          buildFeaturesItem('Dua', AssetsIcons.dua, () {
-            Get.to(() => const DuaPlaylistScreen());
-          }),
-          buildFeaturesItem('Name', AssetsIcons.name, () {
-            Get.to(() => const AllahNameScreen());
-          }),
-          buildFeaturesItem('Tasbi', AssetsIcons.tasbi, () {
-            Get.to(() => const TasbihScreen());
-          }),
-          buildFeaturesItem('Jakat', AssetsIcons.jakat, () {
-            Get.to(() => const JakatScreen());
-          }),
+          }, Colors.green.shade100),
 
-          buildFeaturesItem('More', AssetsIcons.jakat, () {
+          buildFeaturesItem('নামাজ', LucideIcons.clock, () {
             Get.to(() => const JakatScreen());
-          }),
+          }, Colors.blue.shade100),
+
+          buildFeaturesItem('রোজা', LucideIcons.sun, () {
+            Get.to(() => const JakatScreen());
+          }, Colors.orange.shade100),
+
+          buildFeaturesItem('হজ', LucideIcons.mapPin, () {
+            Get.to(() => const DuaPlaylistScreen());
+          }, Colors.red.shade100),
+
+          buildFeaturesItem('দোয়া', LucideIcons.hand, () {
+            Get.to(() => const DuaPlaylistScreen());
+          }, Colors.purple.shade100),
+
+          buildFeaturesItem('আল্লাহর নাম', LucideIcons.star, () {
+            Get.to(() => const AllahNameScreen());
+          }, Colors.teal.shade100),
+
+          buildFeaturesItem('তাসবিহ', LucideIcons.circleDot, () {
+            Get.to(() => const TasbihScreen());
+          }, Colors.amber.shade100),
+
+          buildFeaturesItem('যাকাত', LucideIcons.dollarSign, () {
+            Get.to(() => const JakatScreen());
+          }, Colors.indigo.shade100),
+
+          buildFeaturesItem('আরও', LucideIcons.menu, () {
+            Get.to(() => const JakatScreen());
+          }, Colors.grey.shade300),
         ],
       ),
     );
   }
 
-  GestureDetector buildFeaturesItem(title, image, ontap) {
+  Widget buildFeaturesItem(
+    String title,
+    IconData icon,
+    VoidCallback ontap,
+    Color bgColor,
+  ) {
     return GestureDetector(
       onTap: ontap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            height: 100,
-            width: Get.width / 4,
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            decoration: BoxDecoration(
-              color: AppColors.cE8E8E8,
-              borderRadius: BorderRadius.circular(8),
+      child: Container(
+        height: 100,
+        width: Get.width / 3.8,
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withAlpha((0.3 * 255).toInt()),
+              blurRadius: 6,
+              offset: const Offset(0, 4),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset(image),
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: AppColors.c818181,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ],
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 34, color: AppColors.c333333),
+            const SizedBox(height: 10),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: AppColors.c333333,
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

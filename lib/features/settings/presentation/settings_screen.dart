@@ -77,7 +77,7 @@ class SettingsScreen extends StatelessWidget {
       onTap: ontap,
       child: Container(
         height: 60,
-        margin: EdgeInsets.only(bottom: 12),
+        margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.black12, width: 0.5),
           borderRadius: BorderRadius.circular(10),
@@ -89,7 +89,7 @@ class SettingsScreen extends StatelessWidget {
             color: AppColors.primaryColor,
           ),
           title: Text(title, style: TextFontStyle.textStyle14w500c242424),
-          trailing: Icon(Icons.arrow_forward_ios, size: 20),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 20),
         ),
       ),
     );
