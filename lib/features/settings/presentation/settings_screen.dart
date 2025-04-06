@@ -32,35 +32,37 @@ class SettingsScreen extends StatelessWidget {
               ontap: () {},
             ),
             buildProfileTile(
-              image: AssetsIcons.privacy,
-              title: 'Website',
-              ontap: () {},
-            ),
-            buildProfileTile(
-              image: AssetsIcons.privacy,
-              title: 'Facebook',
-              ontap: () {},
-            ),
-            buildProfileTile(
-              image: AssetsIcons.privacy,
-              title: 'App Version',
-              ontap: () {},
-            ),
-            buildProfileTile(
-              image: AssetsIcons.privacy,
+              image: AssetsIcons.themes,
               title: 'Theme Change',
               ontap: () {},
             ),
             buildProfileTile(
-              image: AssetsIcons.privacy,
-              title: 'Share App',
+              image: AssetsIcons.internet,
+              title: 'Website',
               ontap: () {},
             ),
             buildProfileTile(
-              image: AssetsIcons.privacy,
+              image: AssetsIcons.facebook,
+              title: 'Facebook',
+              ontap: () {},
+            ),
+            buildProfileTile(
+              image: AssetsIcons.version,
+              title: 'App Version',
+              ontap: () {},
+            ),
+
+            buildProfileTile(
+              image: AssetsIcons.feedback,
               title: 'Feedback',
               ontap: () {},
             ),
+            buildProfileTile(
+              image: AssetsIcons.share,
+              title: 'Share App',
+              ontap: () {},
+            ),
+
             UIHelper.heightLarge,
           ],
         ),

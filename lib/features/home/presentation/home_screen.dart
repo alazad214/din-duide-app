@@ -4,6 +4,7 @@ import 'package:din_guide_app/common_widgets/custom_button.dart';
 import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:din_guide_app/constants/text_font_style.dart';
+import 'package:din_guide_app/features/drawer/presentation/drawer.dart';
 import 'package:din_guide_app/features/home/widgets/home_header.dart'
     show HomeHeader;
 import 'package:din_guide_app/helpers/ui_helpers.dart';
@@ -22,8 +23,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final carouselProvider = Provider.of<CarouselProvider>(context);
+    final scaffoldKey = GlobalKey<ScaffoldState>();
     log('build');
     return Scaffold(
+      key: scaffoldKey,
+
+      drawer: const CustomDrawer(),
       backgroundColor: AppColors.cWhite,
       body: SingleChildScrollView(
         child: Column(
@@ -43,10 +48,16 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
-              child: const SafeArea(
+              child: SafeArea(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Center(child: HomeHeader()),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Center(
+                    child: HomeHeader(
+                      drawerOntap: () {
+                        scaffoldKey.currentState?.openDrawer();
+                      },
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -87,14 +98,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const MyFeaturesWidgets(),
-                        const Text(
-                          'Ask AI Bot',
-                          style: TextStyle(
-                            color: Color(0xFF222222),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        UIHelper.heightMedium,
                         Container(
                           height: 130,
                           width: double.infinity,
@@ -125,7 +129,9 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                       UIHelper.heightSmall,
                                       Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10,
+                                        ),
                                         child: customButton(
                                           height: 30,
                                           color: AppColors.secondaryColor2,

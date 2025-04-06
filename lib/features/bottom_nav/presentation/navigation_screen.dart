@@ -5,7 +5,7 @@ import '../../../constants/app_colors.dart';
 import '../../settings/presentation/settings_screen.dart';
 import '../../alarm/presentation/alarm_screen.dart';
 import '../../home/presentation/home_screen.dart';
-import '../../salat/presentation/salat_screen.dart';
+import '../../salat/presentation/features_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -25,7 +25,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   List pages = [
     const HomeScreen(),
-    const SalatScreen(),
+    const FeaturesScreen(),
     const AlarmScreen(),
     const SettingsScreen(),
   ];

@@ -5,14 +5,14 @@ import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../../constants/app_colors.dart';
 
-class SalatScreen extends StatefulWidget {
-  const SalatScreen({super.key});
+class FeaturesScreen extends StatefulWidget {
+  const FeaturesScreen({super.key});
 
   @override
-  State<SalatScreen> createState() => _SalatScreenState();
+  State<FeaturesScreen> createState() => _FeaturesScreenState();
 }
 
-class _SalatScreenState extends State<SalatScreen> {
+class _FeaturesScreenState extends State<FeaturesScreen> {
   int selectedItem = 0;
   List weekList = ['Sat', 'Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri'];
   List<Map> prayerTime = [
