@@ -1,6 +1,7 @@
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:din_guide_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
+import '../../../common_widgets/auth_appbar.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
@@ -11,8 +12,9 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings', style: TextFontStyle.headline20w700c0CC0DF),
+      appBar: const CustomAppbar(
+        title: 'Settings',
+        leadingVisible: true,
         centerTitle: true,
       ),
       body: SingleChildScrollView(

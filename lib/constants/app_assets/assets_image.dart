@@ -2,6 +2,7 @@ class AssetsImage {
   AssetsImage._();
   static String bg = 'assets/icons/bg.png';
   static String bg2 = 'assets/images/bg2.png';
+  static String bg3 = 'assets/images/bg3.jpg';
   static String background2 = 'assets/images/background2.png';
   static String roundplus = 'assets/images/roundplus.png';
   static String onboarding = 'assets/images/onboarding.png';
