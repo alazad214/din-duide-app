@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../constants/app_assets/assets_image.dart';
 import '../constants/app_colors.dart';
 
@@ -36,7 +37,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       leading: Visibility(
         visible: !leadingVisible,
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
           icon: Icon(
             Icons.arrow_back_ios_new,
             color: AppColors.cFFFFFF,
