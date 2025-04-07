@@ -1,7 +1,10 @@
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'about_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -28,7 +31,13 @@ class CustomDrawer extends StatelessWidget {
           ),
 
           customTile(icon: Iconsax.settings, text: 'Settings', ontap: () {}),
-          customTile(icon: Iconsax.info_circle, text: 'About Us', ontap: () {}),
+          customTile(
+            icon: Iconsax.info_circle,
+            text: 'About Us',
+            ontap: () {
+              Get.to(() => const AboutUsScreen());
+            },
+          ),
 
           const Divider(color: Colors.black54, thickness: 0.5),
           const SizedBox(height: 20),
