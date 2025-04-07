@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,9 @@ import '../presentation/allah_name_screen.dart';
 import '../presentation/jakat_screen.dart';
 
 class MyFeaturesWidgets extends StatelessWidget {
-  const MyFeaturesWidgets({super.key});
+  final Function moreFeatures;
+  final Function salatFeatures;
+  const MyFeaturesWidgets({super.key, required this.moreFeatures, required this.salatFeatures});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,12 @@ class MyFeaturesWidgets extends StatelessWidget {
             Get.to(() => const JakatScreen());
           }, Colors.green.shade100),
 
-          buildFeaturesItem('নামাজ', LucideIcons.clock, () {
-            Get.to(() => const JakatScreen());
-          }, Colors.blue.shade100),
+          buildFeaturesItem(
+            'নামাজ',
+            LucideIcons.clock,
+            salatFeatures as VoidCallback,
+            Colors.blue.shade100,
+          ),
 
           buildFeaturesItem('রোজা', LucideIcons.sun, () {
             Get.to(() => const JakatScreen());
@@ -51,9 +57,12 @@ class MyFeaturesWidgets extends StatelessWidget {
             Get.to(() => const JakatScreen());
           }, Colors.indigo.shade100),
 
-          buildFeaturesItem('আরও', LucideIcons.menu, () {
-            Get.to(() => const JakatScreen());
-          }, Colors.grey.shade300),
+          buildFeaturesItem(
+            'আরও',
+            LucideIcons.menu,
+            moreFeatures as VoidCallback,
+            Colors.grey.shade300,
+          ),
         ],
       ),
     );
