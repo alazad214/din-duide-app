@@ -15,7 +15,9 @@ import '../widgets/my_features_widget.dart';
 import '../widgets/prayers_time.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.seeMoreFeatures, this.salatFeatures});
+  final Function? seeMoreFeatures;
+  final Function? salatFeatures;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,10 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const MyFeaturesWidgets(),
+                        MyFeaturesWidgets(
+                          moreFeatures: seeMoreFeatures ?? () {},
+                          salatFeatures: salatFeatures ?? () {},
+                        ),
                         UIHelper.heightMedium,
                         Container(
                           height: 150,

@@ -8,7 +8,7 @@ import 'di.dart';
 void checkUserLogin() async {
   await Future.delayed(const Duration(seconds: 2), () {
     if (appData.read(kKayAccessToken) != null) {
-      Get.offAll(() => const HomeScreen());
+      Get.offAll(() =>  const HomeScreen());
       String token = appData.read(kKayAccessToken);
       DioSingleton.instance.update(token);
     } else {

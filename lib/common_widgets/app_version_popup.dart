@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
 import '../constants/app_colors.dart';
 
 Future<void> showAppVersionDialog(BuildContext context) async {

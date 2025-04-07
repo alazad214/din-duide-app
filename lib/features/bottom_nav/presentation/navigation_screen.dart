@@ -23,12 +23,17 @@ class _NavigationScreenState extends State<NavigationScreen> {
     });
   }
 
-  List pages = [
-    const HomeScreen(),
-    const FeaturesScreen(),
-    const AlarmScreen(),
-    const SettingsScreen(),
-  ];
+  void switchToFeatures() {
+    setState(() {
+      selectedIndex = 1;
+    });
+  }
+
+  void switchTosalat() {
+    setState(() {
+      selectedIndex = 2;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,15 @@ class _NavigationScreenState extends State<NavigationScreen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: pages[selectedIndex],
+
+        body:
+            selectedIndex == 0
+                ? HomeScreen(seeMoreFeatures: switchToFeatures,salatFeatures: switchTosalat,)
+                : selectedIndex == 1
+                ? const FeaturesScreen()
+                : selectedIndex == 2
+                ? const AlarmScreen()
+                : const SettingsScreen(),
 
         bottomNavigationBar: Container(
           padding: EdgeInsets.symmetric(vertical: 10.h),
