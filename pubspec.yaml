@@ -61,6 +61,7 @@ dependencies:
   provider: ^6.1.2
   iconsax: ^0.0.8
   lucide_icons: ^0.257.0
+  hijri: ^3.0.0
 
 
 dev_dependencies:

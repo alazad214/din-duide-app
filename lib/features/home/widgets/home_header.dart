@@ -1,11 +1,11 @@
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:hijri/hijri_calendar.dart';
 
 class HomeHeader extends StatelessWidget {
   final VoidCallback drawerOntap;
-   const HomeHeader({super.key, required this.drawerOntap});
-
+  const HomeHeader({super.key, required this.drawerOntap});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class HomeHeader extends StatelessWidget {
                 ],
               ),
               InkWell(
-                onTap:drawerOntap,
+                onTap: drawerOntap,
                 child: Container(
                   height: 50,
                   width: 50,
@@ -62,6 +62,8 @@ class HomeHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
+
+        //GREETING MESSAGE-->
         const Text(
           'As-salamu alaykum',
           style: TextStyle(
@@ -70,6 +72,25 @@ class HomeHeader extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
+
+        //HIJRI DATE-->
+        StreamBuilder(
+          stream: Stream.periodic(const Duration(seconds: 1)),
+          builder: (context, snapshot) {
+            final hijriDate = HijriCalendar.now();
+            return Text(
+              '${hijriDate.hDay}, ${hijriDate.getLongMonthName()} ,${hijriDate.hYear}',
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+              ),
+              textAlign: TextAlign.center,
+            );
+          },
+        ),
+
+        //CURRENT TIME-->
         StreamBuilder(
           stream: Stream.periodic(const Duration(seconds: 1)),
           builder: (context, snapshot) {
