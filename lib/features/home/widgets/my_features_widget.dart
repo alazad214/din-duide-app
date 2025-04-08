@@ -5,13 +5,18 @@ import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import '../../dua/presentation/dua_playlist_screen.dart';
 import '../../tasbih/tasbih_screen.dart';
+import '../features/presentation/hajj_screen.dart';
 import '../presentation/allah_name_screen.dart';
-import '../presentation/jakat_screen.dart';
+import '../features/presentation/jakat_screen.dart';
 
 class MyFeaturesWidgets extends StatelessWidget {
   final Function moreFeatures;
   final Function salatFeatures;
-  const MyFeaturesWidgets({super.key, required this.moreFeatures, required this.salatFeatures});
+  const MyFeaturesWidgets({
+    super.key,
+    required this.moreFeatures,
+    required this.salatFeatures,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class MyFeaturesWidgets extends StatelessWidget {
         runSpacing: 10,
         children: [
           buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
-            Get.to(() => const JakatScreen());
+            Get.to(() => ZakatScreen());
           }, Colors.green.shade100),
 
           buildFeaturesItem(
@@ -34,11 +39,11 @@ class MyFeaturesWidgets extends StatelessWidget {
           ),
 
           buildFeaturesItem('রোজা', LucideIcons.sun, () {
-            Get.to(() => const JakatScreen());
+            Get.to(() => ZakatScreen());
           }, Colors.orange.shade100),
 
           buildFeaturesItem('হজ', LucideIcons.mapPin, () {
-            Get.to(() => const DuaPlaylistScreen());
+            Get.to(() => HajjScreen());
           }, Colors.red.shade100),
 
           buildFeaturesItem('দোয়া', LucideIcons.hand, () {
@@ -54,7 +59,7 @@ class MyFeaturesWidgets extends StatelessWidget {
           }, Colors.amber.shade100),
 
           buildFeaturesItem('যাকাত', LucideIcons.dollarSign, () {
-            Get.to(() => const JakatScreen());
+            Get.to(() => ZakatScreen());
           }, Colors.indigo.shade100),
 
           buildFeaturesItem(
