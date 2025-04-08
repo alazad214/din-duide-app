@@ -1,8 +1,10 @@
-
-import 'package:din_guide_app/features/home/widgets/salat_popup.dart' show showSalatPopup;
+import 'package:din_guide_app/features/home/widgets/salat_popup.dart'
+    show showSalatPopup;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Optional: for better font
 
 import '../../../constants/app_assets/assets_image.dart' show AssetsImage;
+import '../../../constants/app_colors.dart';
 
 class PrayersTime extends StatefulWidget {
   const PrayersTime({super.key});
@@ -12,7 +14,7 @@ class PrayersTime extends StatefulWidget {
 }
 
 class _PrayersTimeState extends State<PrayersTime> {
-  List prayesList = [
+  final List<String> prayerIcons = [
     AssetsImage.fajr,
     AssetsImage.jahr,
     AssetsImage.asr,
@@ -20,67 +22,71 @@ class _PrayersTimeState extends State<PrayersTime> {
     AssetsImage.isha,
   ];
 
-  List prayesName = ['Fajr', 'Zuhr', 'Asr', 'Magrib', 'Isha'];
+  final List<String> prayerNames = ['ফজর', 'যোহর', 'আসর', 'মাগরিব', 'এশা'];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SingleChildScrollView(
+    return SizedBox(
+      height: 120,
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              for (int i = 0; i < prayesList.length; i++)
-                GestureDetector(
-                  onTap: () {
-                    showSalatPopup(
-                      context,
-                      prayesName[i],
-                      prayesList[i],
-                      'content',
-                    );
-                  },
-                  child: Container(
-                    width: 60,
-                    margin:const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      spacing: 8,
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          height: 60,
-                          decoration: ShapeDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(prayesList[i]),
-                              fit: BoxFit.fill,
-                            ),
-                            shape:const OvalBorder(),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 60,
-                          child: Text(
-                            prayesName[i],
-                            textAlign: TextAlign.center,
-                            style:const TextStyle(
-                              color: const Color(0xFF222222),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        itemCount: prayerIcons.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              showSalatPopup(
+                context,
+                prayerNames[index],
+                prayerIcons[index],
+                'content',
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(right: 16),
+              width: 100,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [AppColors.primaryColor, Color(0xFF00f2fe)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 58,
+                    height: 58,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.6),
+                          blurRadius: 6,
+                          spreadRadius: 1,
                         ),
                       ],
                     ),
+                    padding: const EdgeInsets.all(10),
+                    child: Image.asset(prayerIcons[index], fit: BoxFit.contain),
                   ),
-                ),
-            ],
-          ),
-        ),
+                  const SizedBox(height: 10),
+                  Text(
+                    prayerNames[index],
+                    style: GoogleFonts.notoSansBengali(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

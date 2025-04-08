@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final carouselProvider = Provider.of<CarouselProvider>(context);
     final scaffoldKey = GlobalKey<ScaffoldState>();
-    log('build');
+    log('build: HomeScreen is being built');
     return Scaffold(
       key: scaffoldKey,
 

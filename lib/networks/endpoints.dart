@@ -1,4 +1,4 @@
-const String baseUrl = "https://mehdi.softvencefsd.xyz/api/";
+const String salatUrl = "https://muslimsalat.com";
 const String privacyPolicy = "https://github.com/alazad214/privacy-policy-example/blob/main/din_guide_privacy_policy";
 const String websiteLink = "https://alazad.netlify.app/#/minified:wB";
 const String facebookLink = "https://www.facebook.com/azad214official";

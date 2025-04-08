@@ -34,21 +34,21 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      leading: Visibility(
-        visible: !leadingVisible,
-        child: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: AppColors.cFFFFFF,
-            size: 20.sp,
-          ),
-        ),
-      ),
+      leading:
+          leadingVisible
+              ? IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios_new,
+                  color: AppColors.cFFFFFF,
+                  size: 20.sp,
+                ),
+              )
+              : null,
       backgroundColor: backgroundColor ?? Colors.transparent,
-      titleSpacing: 2.w,
+      titleSpacing: leadingVisible ? 0 : 15.w,
       centerTitle: centerTitle ?? true,
       title: Text(
         title,

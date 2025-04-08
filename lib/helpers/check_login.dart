@@ -1,18 +1,16 @@
+import 'package:din_guide_app/features/bottom_nav/presentation/navigation_screen.dart';
+import 'package:din_guide_app/helpers/di.dart';
 import 'package:get/get.dart';
-import '../constants/app_constants.dart';
-import '../features/home/presentation/home_screen.dart';
-import '../features/onboarding/presentation/onboarding_screen1.dart';
-import '../networks/dio/dio.dart';
-import 'di.dart';
+import '../features/onboarding/presentation/location_picker_screen.dart';
 
 void checkUserLogin() async {
-  await Future.delayed(const Duration(seconds: 2), () {
-    if (appData.read(kKayAccessToken) != null) {
-      Get.offAll(() =>  const HomeScreen());
-      String token = appData.read(kKayAccessToken);
-      DioSingleton.instance.update(token);
-    } else {
-      Get.offAll(() => const OnboardingScreen1());
-    }
-  });
+  await Future.delayed(const Duration(seconds: 2));
+
+  final location = appData.read('selectedLocation');
+
+  if (location != null && location.isNotEmpty) {
+    Get.offAll(() => const NavigationScreen());
+  } else {
+    Get.offAll(() => const LocationPickerScreen());
+  }
 }
