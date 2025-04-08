@@ -6,19 +6,18 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:provider/provider.dart';
+import 'package:toastification/toastification.dart';
 import 'helpers/all_routes.dart';
 import 'helpers/di.dart';
 import 'helpers/helper_methods.dart';
 import 'helpers/navigation_service.dart';
 import 'helpers/provider_list.dart';
-import 'networks/dio/dio.dart';
 import 'networks/internet_checker/internet_checker_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   diSetup();
-  DioSingleton.instance.create();
   Get.put(InternetController(), permanent: true);
   runApp(MultiProvider(providers: providerLists, child: MyApp()));
 }
@@ -51,12 +50,14 @@ class UtillScreenMobile extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          builder: EasyLoading.init(),
-          navigatorKey: NavigationService.navigatorKey,
-          onGenerateRoute: RouteGenerator.generateRoute,
-          home: WelcomeScreen(),
+        return ToastificationWrapper(
+          child: GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            builder: EasyLoading.init(),
+            navigatorKey: NavigationService.navigatorKey,
+            onGenerateRoute: RouteGenerator.generateRoute,
+            home: const WelcomeScreen(),
+          ),
         );
       },
     );

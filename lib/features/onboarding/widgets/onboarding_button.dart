@@ -19,7 +19,7 @@ class OnboardingButton extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(() => const NavigationScreen());
+              Get.offAll(() => const NavigationScreen());
             },
             child: Text('Skip', style: TextFontStyle.headline16w600c333333),
           ),

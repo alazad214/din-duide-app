@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
 import '../../settings/presentation/settings_screen.dart';
-import '../../alarm/presentation/alarm_screen.dart';
+import '../../salat/presentation/salat_screen.dart';
 import '../../home/presentation/home_screen.dart';
 import '../../salat/presentation/features_screen.dart';
 
@@ -48,7 +48,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 : selectedIndex == 1
                 ? const FeaturesScreen()
                 : selectedIndex == 2
-                ? const AlarmScreen()
+                ? const SalatScreen()
                 : const SettingsScreen(),
 
         bottomNavigationBar: Container(

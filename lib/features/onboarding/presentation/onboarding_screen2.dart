@@ -41,7 +41,7 @@ class OnboardingScreen2 extends StatelessWidget {
 
           OnboardingButton(
             onTap: () {
-              Get.to(() => const NavigationScreen());
+              Get.offAll(() => const NavigationScreen());
             },
           ),
         ],
