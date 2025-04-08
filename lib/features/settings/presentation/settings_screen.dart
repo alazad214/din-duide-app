@@ -20,8 +20,7 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: 'Settings',
-        leadingVisible: true,
-        centerTitle: true,
+         leadingVisible: false,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20),

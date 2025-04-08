@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common_widgets/auth_appbar.dart';
+import '../../../common_widgets/auth_appbar.dart';
 
 class HajjScreen extends StatelessWidget {
   const HajjScreen({super.key});

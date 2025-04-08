@@ -65,7 +65,7 @@ class _SalatScreenState extends State<SalatScreen> {
 
       appBar: const CustomAppbar(
         title: 'নামাজের সময়সূচি',
-        leadingVisible: true,
+        leadingVisible: false,
       ),
       body: FutureBuilder(
         future: _prayersModelFuture,

@@ -3,11 +3,12 @@ import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import '../../dua/presentation/dua_playlist_screen.dart';
+import '../../features/presentation/dua_screen.dart';
+import '../../features/presentation/roja_screen.dart';
 import '../../tasbih/tasbih_screen.dart';
-import '../features/presentation/hajj_screen.dart';
-import '../presentation/allah_name_screen.dart';
-import '../features/presentation/jakat_screen.dart';
+import '../../features/presentation/hajj_screen.dart';
+import '../../features/presentation/allah_name_screen.dart';
+import '../../features/presentation/jakat_screen.dart';
 
 class MyFeaturesWidgets extends StatelessWidget {
   final Function moreFeatures;
@@ -28,7 +29,7 @@ class MyFeaturesWidgets extends StatelessWidget {
         runSpacing: 10,
         children: [
           buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
-            Get.to(() => ZakatScreen());
+            Get.to(() => const ZakatScreen());
           }, Colors.green.shade100),
 
           buildFeaturesItem(
@@ -39,15 +40,15 @@ class MyFeaturesWidgets extends StatelessWidget {
           ),
 
           buildFeaturesItem('রোজা', LucideIcons.sun, () {
-            Get.to(() => ZakatScreen());
+            Get.to(() => const RojaDetailsScreen());
           }, Colors.orange.shade100),
 
-          buildFeaturesItem('হজ', LucideIcons.mapPin, () {
-            Get.to(() => HajjScreen());
+          buildFeaturesItem('হজ গাইড', LucideIcons.mapPin, () {
+            Get.to(() => const HajjScreen());
           }, Colors.red.shade100),
 
           buildFeaturesItem('দোয়া', LucideIcons.hand, () {
-            Get.to(() => const DuaPlaylistScreen());
+            Get.to(() =>  DuaScreen());
           }, Colors.purple.shade100),
 
           buildFeaturesItem('আল্লাহর নাম', LucideIcons.star, () {
@@ -59,7 +60,7 @@ class MyFeaturesWidgets extends StatelessWidget {
           }, Colors.amber.shade100),
 
           buildFeaturesItem('যাকাত', LucideIcons.dollarSign, () {
-            Get.to(() => ZakatScreen());
+            Get.to(() => const ZakatScreen());
           }, Colors.indigo.shade100),
 
           buildFeaturesItem(
