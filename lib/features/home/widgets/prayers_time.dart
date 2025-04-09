@@ -1,92 +1,168 @@
-import 'package:din_guide_app/features/home/widgets/salat_popup.dart'
-    show showSalatPopup;
+import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
+import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/features/home/widgets/salat_popup.dart';
+import 'package:din_guide_app/features/salat/data/api_service.dart';
+import 'package:din_guide_app/features/salat/model/prayers_model.dart';
+import 'package:din_guide_app/helpers/di.dart' show appData;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; // Optional: for better font
-
-import '../../../constants/app_assets/assets_image.dart' show AssetsImage;
+import 'package:google_fonts/google_fonts.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../constants/app_colors.dart';
 
 class PrayersTime extends StatefulWidget {
-  const PrayersTime({super.key});
+  PrayersTime({super.key});
 
   @override
   State<PrayersTime> createState() => _PrayersTimeState();
 }
 
 class _PrayersTimeState extends State<PrayersTime> {
-  final List<String> prayerIcons = [
-    AssetsImage.fajr,
-    AssetsImage.jahr,
-    AssetsImage.asr,
-    AssetsImage.magrib,
-    AssetsImage.isha,
-  ];
+  late final Future<PrayersModel> _prayersModelFuture;
 
-  final List<String> prayerNames = ['ফজর', 'যোহর', 'আসর', 'মাগরিব', 'এশা'];
+  String selectedDate = '';
+  String selectedCity = appData.read('selectedLocation');
+
+  @override
+  void initState() {
+    super.initState();
+    _prayersModelFuture = PrayerService().fetchPrayerTimes(
+      selectedCity,
+      selectedDate,
+    );
+  }
+
+  final List<String> prayerNames = const [
+    'ফজর',
+    'যোহর',
+    'আসর',
+    'মাগরিব',
+    'এশা',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        itemCount: prayerIcons.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              showSalatPopup(
-                context,
-                prayerNames[index],
-                prayerIcons[index],
-                'content',
-              );
-            },
-            child: Container(
-              margin: const EdgeInsets.only(right: 16),
-              width: 100,
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppColors.primaryColor, Color(0xFF00f2fe)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomRight,
+      height: 100,
+      child: FutureBuilder(
+        future: _prayersModelFuture,
+        builder: (_, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey.shade300,
+                highlightColor: Colors.grey.shade100,
+                child: Row(children: List.generate(5, (index) => shimmerItem())),
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text("Error: ${snapshot.error}"));
+          }
+
+          final prayerData = snapshot.data;
+          return SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              spacing: 10,
+              children: [
+                buildHomeSalatWidget(
+                  context,
+                  image: AssetsImage.fajr,
+                  prayerName: 'ফজর',
+                  prayerTime: prayerData!.items!.first.fajr ?? 'N/A',
                 ),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 58,
-                    height: 58,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.white.withOpacity(0.6),
-                          blurRadius: 6,
-                          spreadRadius: 1,
-                        ),
-                      ],
-                    ),
-                    padding: const EdgeInsets.all(10),
-                    child: Image.asset(prayerIcons[index], fit: BoxFit.contain),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    prayerNames[index],
-                    style: GoogleFonts.notoSansBengali(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
+                buildHomeSalatWidget(
+                  context,
+                  image: AssetsImage.jahr,
+                  prayerName: 'যোহর',
+                  prayerTime: prayerData.items!.first.dhuhr ?? 'N/A',
+                ),
+                buildHomeSalatWidget(
+                  context,
+                  image: AssetsImage.asr,
+                  prayerName: 'আসর',
+                  prayerTime: prayerData.items!.first.asr ?? 'N/A',
+                ),
+                buildHomeSalatWidget(
+                  context,
+                  image: AssetsImage.magrib,
+                  prayerName: 'মাগরিব',
+                  prayerTime: prayerData.items!.first.maghrib ?? 'N/A',
+                ),
+                buildHomeSalatWidget(
+                  context,
+                  image: AssetsImage.isha,
+                  prayerName: 'এশা',
+                  prayerTime: prayerData.items!.first.isha ?? 'N/A',
+                ),
+              ],
             ),
           );
         },
+      ),
+    );
+  }
+
+  Widget shimmerItem() {
+    return Container(
+      width: 90,
+      height: 100,
+      margin: const EdgeInsets.only(right: 12),
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        borderRadius: BorderRadius.circular(12),
+      ),
+    );
+  }
+
+  GestureDetector buildHomeSalatWidget(
+    BuildContext context, {
+    image,
+    prayerName,
+    prayerTime,
+  }) {
+    return GestureDetector(
+      onTap: () {
+        showSalatPopup(context, prayerName, image, prayerTime);
+      },
+      child: Container(
+        width: 90,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColors.primaryColor.withOpacity(0.2)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              blurRadius: 6,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.primaryColor.withOpacity(0.1),
+              ),
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(image, fit: BoxFit.contain),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              prayerName,
+              style: GoogleFonts.notoSansBengali(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primaryColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

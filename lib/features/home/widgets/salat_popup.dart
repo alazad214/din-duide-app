@@ -1,35 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void showSalatPopup(BuildContext context, String title, image, String content) {
+void showSalatPopup(
+  BuildContext context,
+  String prayerName,
+  String image,
+  String prayerTime,
+) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        content: Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircleAvatar(radius: 60, child: Image.asset(image)),
-                SizedBox(height: 20),
-                Text(
-                  "$title",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+      return Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        backgroundColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF00c6ff), Color(0xFF0072ff)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                 ),
-                SizedBox(height: 20),
-                Text(
-                  "October 07, 2025",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                child: Image.asset(
+                  image,
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.contain,
                 ),
-                SizedBox(height: 20),
-                Text(
-                  "05 : 38 - 6:00",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(height: 20),
+
+              Text(
+                prayerName,
+                style: GoogleFonts.notoSansBengali(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 10),
+
+              Text(
+               prayerTime,
+                style: GoogleFonts.notoSansBengali(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              // Time Range
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12,
+                  horizontal: 24,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                 prayerTime,
+                  style: GoogleFonts.notoSansBengali(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              // Close Button
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 10,
+                  ),
+                ),
+                child: const Text(
+                  "বন্ধ করুন",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              ),
+            ],
           ),
         ),
       );
