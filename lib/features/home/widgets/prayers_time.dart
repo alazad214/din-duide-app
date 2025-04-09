@@ -1,16 +1,15 @@
-import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:din_guide_app/features/home/widgets/salat_popup.dart';
 import 'package:din_guide_app/features/salat/data/api_service.dart';
 import 'package:din_guide_app/features/salat/model/prayers_model.dart';
-import 'package:din_guide_app/helpers/di.dart' show appData;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../constants/app_colors.dart';
+import '../../../helpers/di.dart';
 
 class PrayersTime extends StatefulWidget {
-  PrayersTime({super.key});
+  const PrayersTime({super.key});
 
   @override
   State<PrayersTime> createState() => _PrayersTimeState();
@@ -52,7 +51,9 @@ class _PrayersTimeState extends State<PrayersTime> {
               child: Shimmer.fromColors(
                 baseColor: Colors.grey.shade300,
                 highlightColor: Colors.grey.shade100,
-                child: Row(children: List.generate(5, (index) => shimmerItem())),
+                child: Row(
+                  children: List.generate(5, (index) => shimmerItem()),
+                ),
               ),
             );
           } else if (snapshot.hasError) {

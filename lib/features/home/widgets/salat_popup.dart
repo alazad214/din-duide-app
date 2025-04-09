@@ -45,17 +45,16 @@ void showSalatPopup(
                   color: Colors.black87,
                 ),
               ),
-              const SizedBox(height: 10),
-
+              const SizedBox(height: 8),
               Text(
-               prayerTime,
+                "${DateTime.now().day}, ${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][DateTime.now().month - 1]}, ${DateTime.now().year}",
                 style: GoogleFonts.notoSansBengali(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: Colors.grey,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               // Time Range
               Container(
@@ -68,7 +67,7 @@ void showSalatPopup(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                 prayerTime,
+                  prayerTime,
                   style: GoogleFonts.notoSansBengali(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
