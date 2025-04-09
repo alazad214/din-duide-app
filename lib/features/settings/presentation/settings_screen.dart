@@ -42,11 +42,11 @@ class SettingsScreen extends StatelessWidget {
                 EasyLauncher.url(url: privacyPolicy);
               },
             ),
-            buildProfileTile(
-              image: AssetsIcons.themes,
-              title: 'Theme Change',
-              ontap: () {},
-            ),
+            // buildProfileTile(
+            //   image: AssetsIcons.themes,
+            //   title: 'Theme Change',
+            //   ontap: () {},
+            // ),
             buildProfileTile(
               image: AssetsIcons.internet,
               title: 'Website',

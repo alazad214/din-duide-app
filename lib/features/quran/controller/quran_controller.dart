@@ -3,8 +3,8 @@ import 'package:din_guide_app/networks/endpoints.dart';
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-interface
-class QuranController extends GetxController {
+
+interface class QuranController extends GetxController {
   var isLoading = true.obs;
   var quranData = QuranModel().obs;
 

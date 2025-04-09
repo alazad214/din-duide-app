@@ -7,7 +7,7 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppbar(title: 'About Us'),
+      appBar: CustomAppbar(title: 'About Us', leadingVisible: true,),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(

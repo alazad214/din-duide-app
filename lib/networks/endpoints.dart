@@ -3,6 +3,9 @@ const String privacyPolicy = "https://github.com/alazad214/privacy-policy-exampl
 const String websiteLink = "https://alazad.netlify.app/#/minified:wB";
 const String facebookLink = "https://www.facebook.com/azad214official";
 const quranAPI = "https://api.alquran.cloud/v1/quran/quran-uthmani";
+const quranDetials = "https://online-quran-api.p.rapidapi.com/surahs/";
+
+
 final class NetworkConstants {
   NetworkConstants._();
   static const ACCEPT = "Accept";
