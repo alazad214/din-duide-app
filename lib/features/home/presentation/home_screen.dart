@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                         PrayersTime(),
+                        const PrayersTime(),
                         const Text(
                           'Our Features',
                           style: TextStyle(

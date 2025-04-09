@@ -1,4 +1,6 @@
+import 'package:din_guide_app/common_widgets/exit_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
@@ -37,14 +39,26 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (!didPop) {
+          final shouldExit = await exitPopup(context);
+
+          if (shouldExit == true) {
+            SystemNavigator.pop();
+          }
+        }
+      },
+      child: Scaffold(
         backgroundColor: Colors.white,
 
         body:
             selectedIndex == 0
-                ? HomeScreen(seeMoreFeatures: switchToFeatures,salatFeatures: switchTosalat,)
+                ? HomeScreen(
+                  seeMoreFeatures: switchToFeatures,
+                  salatFeatures: switchTosalat,
+                )
                 : selectedIndex == 1
                 ? const FeaturesScreen()
                 : selectedIndex == 2

@@ -1,69 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../constants/text_font_style.dart';
-import '../helpers/ui_helpers.dart';
-import 'custom_button.dart';
 
-
-void customPopup(
-  BuildContext context,
-  String title,
-  String buttonName,
-  VoidCallback ontap,
-) {
-  showDialog(
+Future<bool> showCustomPopup(BuildContext context, String question) async {
+  return await showDialog<bool>(
     context: context,
-    barrierDismissible: true,
     builder: (BuildContext context) {
       return Dialog(
-        elevation: 12,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(20.0),
         ),
-        child: Container(
-          padding: EdgeInsets.all(20.sp),
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextFontStyle.textStyle16w400c5C5C5C,
+        elevation: 10,
+        backgroundColor: Colors.transparent,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blue.shade200, Colors.white],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
-              UIHelper.widthSpace(24.h),
-              Row(
-                children: [
-                  Expanded(
-                    child: customButton(
-                        name: 'Cancel',
-                        onCallBack: () {
-                          Navigator.pop(context);
-                        },
-                        height: 42.h,
-                        context: context,
-                        color: Colors.transparent,
-                        textStyle: TextFontStyle.textStyle18w500c333333),
+            ),
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(
+                  question,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                    fontFamily: 'Arial',
                   ),
-                  UIHelper.widthSpace(16.w),
-                  Expanded(
-                    child: customButton(
-                      name: buttonName,
-                      height: 42.h,
-                      onCallBack: ontap,
-                      context: context,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop(true); 
+                      },
+                      child: const Text("Yes", style: TextStyle(fontSize: 16)),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    const SizedBox(width: 20),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop(false); 
+                      },
+                      child: const Text("No", style: TextStyle(fontSize: 16)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       );
     },
-  );
+  ) ?? false; // Return false if the dialog is dismissed without a selection
 }
