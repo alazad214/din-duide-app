@@ -68,6 +68,7 @@ dependencies:
   shimmer: ^3.0.0
   shared_preferences: ^2.5.3
   flutter_compass: ^0.8.1
+  audioplayers:
 
 dev_dependencies:
   flutter_test:
