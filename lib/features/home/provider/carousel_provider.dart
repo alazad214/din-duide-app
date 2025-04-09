@@ -1,5 +1,5 @@
+import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:flutter/foundation.dart';
-import '../../../constants/app_assets/networks_image.dart';
 
 class CarouselProvider extends ChangeNotifier {
   int _currentIndex = 0;
@@ -14,8 +14,8 @@ class CarouselProvider extends ChangeNotifier {
   }
 
   List carouselList = [
-    NetworksImage.sliderImage,
-    NetworksImage.sliderImage,
-    NetworksImage.sliderImage,
+    AssetsImage.banner,
+    AssetsImage.banner2,
+    AssetsImage.banner3,
   ];
 }

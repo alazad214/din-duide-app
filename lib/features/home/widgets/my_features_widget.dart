@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/features/quran/presentation/quran_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -29,7 +30,7 @@ class MyFeaturesWidgets extends StatelessWidget {
         runSpacing: 10,
         children: [
           buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
-            Get.to(() => const ZakatScreen());
+            Get.to(() => QuranScreen());
           }, Colors.green.shade100),
 
           buildFeaturesItem(
@@ -48,7 +49,7 @@ class MyFeaturesWidgets extends StatelessWidget {
           }, Colors.red.shade100),
 
           buildFeaturesItem('দোয়া', LucideIcons.hand, () {
-            Get.to(() =>  DuaScreen());
+            Get.to(() => DuaScreen());
           }, Colors.purple.shade100),
 
           buildFeaturesItem('আল্লাহর নাম', LucideIcons.star, () {

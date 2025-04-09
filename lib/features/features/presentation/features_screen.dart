@@ -7,6 +7,7 @@ import 'package:din_guide_app/features/features/presentation/kibla_screen.dart';
 import 'package:din_guide_app/features/features/presentation/namaz_screen.dart';
 import 'package:din_guide_app/features/features/presentation/qurbani_info_screen.dart';
 import 'package:din_guide_app/features/features/presentation/roja_screen.dart';
+import 'package:din_guide_app/features/quran/presentation/quran_screen.dart';
 import 'package:din_guide_app/features/salat/widgets/features_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,9 @@ class FeaturesScreen extends StatelessWidget {
               title: 'পবিত্র কুরআন',
               description: 'পূর্ণ কুরআন পাঠ করুন আরবি, অনুবাদ ও তাফসিরসহ।',
               color: Colors.green.shade100,
-              ontap: () {},
+              ontap: () {
+                  Get.to(() =>  QuranScreen());
+              },
             ),
             FeatureCard(
               icon: LucideIcons.clock,

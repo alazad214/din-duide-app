@@ -1,11 +1,10 @@
 import 'dart:developer';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:din_guide_app/features/drawer/presentation/drawer.dart';
+import 'package:din_guide_app/features/home/widgets/build_carousel_slider.dart';
 import 'package:din_guide_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/app_assets/assets_image.dart';
@@ -15,9 +14,10 @@ import '../widgets/my_features_widget.dart';
 import '../widgets/prayers_time.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key, this.seeMoreFeatures, this.salatFeatures});
+  HomeScreen({super.key, this.seeMoreFeatures, this.salatFeatures});
   final Function? seeMoreFeatures;
   final Function? salatFeatures;
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,11 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildCarouselSlider(context, carouselProvider),
+                  buildCarouselSlider(
+                    context,
+                    carouselProvider,
+                    _pageController,
+                  ),
                   const SizedBox(height: 20),
                   SizedBox(
                     width: double.infinity,
@@ -191,41 +195,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget buildCarouselSlider(
-    BuildContext context,
-    CarouselProvider carouselProvider,
-  ) {
-    return Consumer<CarouselProvider>(
-      builder: (context, carouselProvider, child) {
-        return CarouselSlider.builder(
-          itemCount: carouselProvider.carouselList.length,
-          itemBuilder:
-              (BuildContext context, int index, int pageViewIndex) => Container(
-                height: 160,
-                width: double.infinity,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Image.network(
-                  carouselProvider.carouselList[index],
-                  fit: BoxFit.cover,
-                ),
-              ),
-          options: CarouselOptions(
-            autoPlayInterval: const Duration(seconds: 1),
-            viewportFraction: 1,
-            autoPlay: false,
-            height: 160.h,
-            onPageChanged: (index, reason) {
-              carouselProvider.setCurrentIndex(index);
-            },
-          ),
-        );
-      },
     );
   }
 }
