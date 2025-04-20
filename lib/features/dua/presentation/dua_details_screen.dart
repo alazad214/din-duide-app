@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../../constants/app_assets/networks_image.dart';
 import '../../../constants/app_colors.dart';
-import '../../../helpers/navigation_service.dart';
 
 class DuaDetailsScreen extends StatefulWidget {
   const DuaDetailsScreen({super.key});
@@ -39,7 +38,7 @@ class _DuaDetailsScreenState extends State<DuaDetailsScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          NavigationService.goBack;
+                        
                         },
                         icon: const Icon(Icons.arrow_back, color: AppColors.cWhite),
                       ),

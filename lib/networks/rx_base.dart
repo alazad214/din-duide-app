@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:rxdart/subjects.dart';
-import '../helpers/all_routes.dart';
-import '../helpers/navigation_service.dart';
+
 
 abstract class RxResponseInt<T> {
   T empty;
@@ -25,7 +24,7 @@ abstract class RxResponseInt<T> {
     // DioException responseError = error as DioException;
 
     if (error.response!.statusCode == 401) {
-      NavigationService.navigateToUntilReplacement(Routes.login);
+     
     }
 
     dataFetcher.sink.addError(error);

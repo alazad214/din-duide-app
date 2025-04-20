@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/app_assets/assets_icons.dart';
 import '../../constants/app_assets/assets_image.dart';
-import '../../helpers/navigation_service.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -35,7 +34,7 @@ class NotificationScreen extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          NavigationService.goBack;
+                      
                         },
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
                       ),

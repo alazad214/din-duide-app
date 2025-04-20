@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_assets/assets_image.dart';
 import '../../../constants/app_colors.dart';
-import '../../../helpers/navigation_service.dart';
 import 'dua_details_screen.dart' show DuaDetailsScreen;
 
 class DuaPlaylistScreen extends StatefulWidget {
@@ -53,7 +52,6 @@ class _DuaPlaylistScreenState extends State<DuaPlaylistScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          NavigationService.goBack;
                         },
                         icon:const Icon(Icons.arrow_back, color: AppColors.cWhite),
                       ),

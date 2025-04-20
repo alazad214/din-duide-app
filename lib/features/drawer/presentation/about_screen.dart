@@ -13,13 +13,6 @@ class AboutUsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Text(
-                'Welcome to Din Guide!',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 20),
             Text(
               'Our Mission:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -36,7 +29,7 @@ class AboutUsScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Email: support@dinguide.com\nPhone: +1234567890\nWebsite: www.dinguide.com',
+              'Email: dinguide@gmail.com\nPhone: +1234567890\nWebsite: www.dinguide.com',
               style: TextStyle(fontSize: 16),
             ),
           ],

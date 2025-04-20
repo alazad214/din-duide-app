@@ -65,7 +65,7 @@ class SettingsScreen extends StatelessWidget {
               image: AssetsIcons.version,
               title: 'App Version',
               ontap: () {
-                showAppVersionDialog(context);
+             AppVersionHelper.showAppVersionDialog(context);
               },
             ),
 

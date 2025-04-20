@@ -1,4 +1,5 @@
 import 'package:din_guide_app/features/splash/welcome_screen.dart';
+import 'package:din_guide_app/helpers/app_version.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,10 +8,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
-import 'helpers/all_routes.dart';
 import 'helpers/di.dart';
 import 'helpers/helper_methods.dart';
-import 'helpers/navigation_service.dart';
 import 'helpers/provider_list.dart';
 import 'networks/internet_checker/internet_checker_controller.dart';
 
@@ -18,6 +17,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   diSetup();
+    await AppVersionInfo().load();
   Get.put(InternetController(), permanent: true);
   runApp(MultiProvider(providers: providerLists, child: const MyApp()));
 }
@@ -53,8 +53,6 @@ class UtillScreenMobile extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             builder: EasyLoading.init(),
-            navigatorKey: NavigationService.navigatorKey,
-            onGenerateRoute: RouteGenerator.generateRoute,
             home: const WelcomeScreen(),
           ),
         );
