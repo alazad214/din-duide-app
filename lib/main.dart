@@ -1,10 +1,10 @@
 import 'package:din_guide_app/features/splash/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:auto_animated/auto_animated.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
 import 'helpers/all_routes.dart';
@@ -19,7 +19,7 @@ void main() async {
   await GetStorage.init();
   diSetup();
   Get.put(InternetController(), permanent: true);
-  runApp(MultiProvider(providers: providerLists, child: MyApp()));
+  runApp(MultiProvider(providers: providerLists, child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,8 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     rotation();
     setInitValue();
-    return AnimateIfVisibleWrapper(
-      showItemInterval: const Duration(milliseconds: 150),
+    return ProviderScope(
       child: LayoutBuilder(
         builder: (context, constraints) {
           return const UtillScreenMobile();

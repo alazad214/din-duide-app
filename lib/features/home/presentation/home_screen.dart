@@ -5,25 +5,23 @@ import 'package:din_guide_app/features/drawer/presentation/drawer.dart';
 import 'package:din_guide_app/features/home/widgets/build_carousel_slider.dart';
 import 'package:din_guide_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 import '../../../constants/app_assets/assets_image.dart';
-import '../provider/carousel_provider.dart';
 import '../widgets/home_header.dart';
 import '../widgets/my_features_widget.dart';
 import '../widgets/prayers_time.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   HomeScreen({super.key, this.seeMoreFeatures, this.salatFeatures});
   final Function? seeMoreFeatures;
   final Function? salatFeatures;
   final PageController _pageController = PageController();
 
   @override
-  Widget build(BuildContext context) {
-    final carouselProvider = Provider.of<CarouselProvider>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
     final scaffoldKey = GlobalKey<ScaffoldState>();
-    log('build: HomeScreen is being built');
+    log('build');
     return Scaffold(
       key: scaffoldKey,
 
@@ -66,12 +64,9 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildCarouselSlider(
-                    context,
-                    carouselProvider,
-                    _pageController,
-                  ),
+buildCarouselSlider(context, _pageController),
                   const SizedBox(height: 20),
+
                   SizedBox(
                     width: double.infinity,
                     child: Column(
@@ -83,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(
                           width: 364,
                           child: Text(
-                            'Prayer’s Time',
+                            'নামাজের সময়সূচি',
                             style: TextStyle(
                               color: Color(0xFF222222),
                               fontSize: 18,
@@ -93,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const PrayersTime(),
                         const Text(
-                          'Our Features',
+                          'ফিচারসমূহ',
                           style: TextStyle(
                             color: Color(0xFF222222),
                             fontSize: 18,

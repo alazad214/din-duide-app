@@ -65,7 +65,7 @@ class HomeHeader extends StatelessWidget {
 
         //GREETING MESSAGE-->
         const Text(
-          'As-salamu alaykum',
+          'আস-সালামু আলাইকুম',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,

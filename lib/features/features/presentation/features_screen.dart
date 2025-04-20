@@ -22,7 +22,7 @@ class FeaturesScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: 'ফিচারসমূহ',
-        leadingVisible: true,
+        leadingVisible: false,
         centerTitle: true,
         backgroundColor: Colors.transparent,
       ),
