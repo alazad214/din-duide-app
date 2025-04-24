@@ -85,7 +85,7 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
           ),
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,59 +99,78 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
               ),
             ),
 
-            const SizedBox(height: 10),
-            Expanded(
-              child: ListView.builder(
-                itemCount: filteredCities.length,
+            const SizedBox(height: 16),
+            ListView.builder(
+              itemCount: filteredCities.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
 
-                itemBuilder: (context, index) {
-                  return Card(
-                    clipBehavior: Clip.antiAlias,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+              itemBuilder: (context, index) {
+                return Container(
+                  clipBehavior: Clip.antiAlias,
+                  margin: const EdgeInsets.only(bottom: 8),
+                  decoration: BoxDecoration(
+                    color:
+                        selectedLocation == filteredCities[index]
+                            ? AppColors.primaryColor
+                            : AppColors.c999999,
+                    borderRadius: BorderRadius.circular(
+                      selectedLocation == filteredCities[index] ? 4 : 4,
                     ),
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                      ),
-                      leading: CircleAvatar(
-                        radius: 14,
-                        backgroundColor:
-                            selectedLocation == filteredCities[index]
-                                ? AppColors.cWhite
-                                : AppColors.primaryColor,
-                        child: Text(
-                          (index + 1).toString(),
-                          style: TextStyle(
-                            color:
-                                selectedLocation == filteredCities[index]
-                                    ? AppColors.c0D1E40
-                                    : AppColors.cWhite,
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        filteredCities[index],
+                  ),
+
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                    ),
+                    trailing:
+                        selectedLocation == filteredCities[index]
+                            ? const Icon(
+                              Icons.check_circle,
+                              color: AppColors.cFDB338,
+                            )
+                            : null,
+                    leading: CircleAvatar(
+                      radius: 14,
+                      backgroundColor:
+                          selectedLocation == filteredCities[index]
+                              ? AppColors.cFDB338
+                              : AppColors.c4B4B4B,
+
+                      child: Text(
+                        (index + 1).toString(),
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                           color:
                               selectedLocation == filteredCities[index]
                                   ? AppColors.cWhite
-                                  : AppColors.c0D1E40,
+                                  : AppColors.cWhite,
                         ),
                       ),
-                      onTap: () {
-                        setState(() {
-                          selectedLocation = filteredCities[index];
-                        });
-                        _saveSelectedLocation(filteredCities[index]);
-                      },
-                      selected: selectedLocation == filteredCities[index],
-                      selectedTileColor: AppColors.primaryColor,
                     ),
-                  );
-                },
-              ),
+                    title: Text(
+                      filteredCities[index],
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color:
+                            selectedLocation == filteredCities[index]
+                                ? AppColors.cFDB338
+                                : AppColors.cWhite,
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedLocation = filteredCities[index];
+                      });
+                      _saveSelectedLocation(filteredCities[index]);
+                    },
+                    selected: selectedLocation == filteredCities[index],
+                    selectedTileColor: AppColors.primaryColor,
+                  ),
+                );
+              },
             ),
           ],
         ),

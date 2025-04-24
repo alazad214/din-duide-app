@@ -2,9 +2,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class AppVersionInfo {
   static final AppVersionInfo _instance = AppVersionInfo._internal();
-
   factory AppVersionInfo() => _instance;
-
   AppVersionInfo._internal();
 
   late String appName;

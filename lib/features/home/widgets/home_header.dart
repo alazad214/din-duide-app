@@ -1,4 +1,4 @@
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
@@ -37,7 +37,7 @@ class HomeHeader extends StatelessWidget {
                       height: 45,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                          image: AssetImage(AssetsImage.islamicBot),
+                          image: AssetImage(AssetsIcons.quiz),
                           fit: BoxFit.cover,
                         ),
                         shape: const OvalBorder(),

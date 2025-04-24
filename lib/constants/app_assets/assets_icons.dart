@@ -20,6 +20,8 @@ class AssetsIcons {
   static String lock = 'assets/icons/lock.png';
   static String ai = 'assets/icons/ai.png';
   static String category = 'assets/icons/category.png';
+  static String quiz = 'assets/icons/quiz.png';
+  static String quizPng = 'assets/icons/quiz_png.png';
 
 
   static String feedback = 'assets/icons/feedback.png';
