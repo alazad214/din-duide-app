@@ -57,16 +57,17 @@ class _QuizScreenState extends State<QuizScreen> {
 
     showDialog(
       context: context,
-      builder: (_) => AlertDialog(
-        title: const Text("Quiz Result"),
-        content: Text("আপনার স্কোর: $score / ${quizData.length}"),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text("ঠিক আছে"),
-          )
-        ],
-      ),
+      builder:
+          (_) => AlertDialog(
+            title: const Text("Quiz Result"),
+            content: Text("আপনার স্কোর: $score / ${quizData.length}"),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("ঠিক আছে"),
+              ),
+            ],
+          ),
     );
   }
 
@@ -115,13 +116,13 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 currentIndex == quizData.length - 1
                     ? ElevatedButton(
-                        onPressed: submitQuiz,
-                        child: const Text("Submit"),
-                      )
+                      onPressed: submitQuiz,
+                      child: const Text("Submit"),
+                    )
                     : ElevatedButton(
-                        onPressed: nextQuestion,
-                        child: const Text("Next"),
-                      ),
+                      onPressed: nextQuestion,
+                      child: const Text("Next"),
+                    ),
               ],
             ),
           ],
