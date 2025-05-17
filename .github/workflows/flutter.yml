@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +17,13 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.6' # Stable version
+          flutter-version: '3.19.6'
+
+      - name: Flutter doctor
+        run: flutter doctor -v
+
+      - name: Clean project
+        run: flutter clean
 
       - name: Install dependencies
         run: flutter pub get
@@ -35,8 +40,11 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
+      - name: Debug APK path
+        run: ls -R build/app/outputs/flutter-apk/
+
       - name: Upload release APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
