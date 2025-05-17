@@ -24,15 +24,15 @@ class AllahNameScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.primaryColor.withOpacity(0.9),
-                        AppColors.primaryColor.withOpacity(0.7),
+                        AppColors.primaryColor.withAlpha((0.9 * 255).toInt()),
+                        AppColors.primaryColor.withAlpha((0.7 * 255).toInt()),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primaryColor.withOpacity(0.3),
+                        color: AppColors.primaryColor.withAlpha((0.3 * 255).toInt()),
                         blurRadius: 10,
                         offset: const Offset(0, 5),
                       ),

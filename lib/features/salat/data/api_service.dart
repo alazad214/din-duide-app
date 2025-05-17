@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '../../../networks/endpoints.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -8,7 +10,7 @@ class PrayerService {
   Future<PrayersModel> fetchPrayerTimes(String city, date) async {
     try {
       final response = await http.get(Uri.parse('$salatUrl/$city/weekly/$date.json'));
-      print('API Response: ${response.body}');
+      log('API Response: ${response.body}');
 
       if (response.statusCode == 200) {
         return PrayersModel.fromJson(jsonDecode(response.body));

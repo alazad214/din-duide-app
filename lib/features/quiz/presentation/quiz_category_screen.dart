@@ -49,7 +49,7 @@ class IslamicQuizCategoryScreen extends StatelessWidget {
                       backgroundColor: Colors.white,
                       child: Icon(
                         category['icon'],
-                        color: Color(0xFF2D6A4F),
+                        color: const Color(0xFF2D6A4F),
                         size: 32,
                       ),
                     ),

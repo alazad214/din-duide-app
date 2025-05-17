@@ -16,11 +16,11 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   final String title;
-  final onCallBack;
+  final VoidCallback? onCallBack;
   final bool leadingVisible;
-  final actions;
-  final centerTitle;
-  final backgroundColor;
+  final List<Widget>? actions;
+  final bool? centerTitle;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 },
                 icon: Icon(
                   Icons.arrow_back_ios_new,
-                  color: AppColors.cFFFFFF,
+                  color: AppColors.cWhite,
                   size: 20.sp,
                 ),
               )
@@ -53,7 +53,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         title,
         style: TextStyle(
-          color: AppColors.cFFFFFF,
+          color: AppColors.cWhite,
           fontSize: 20.sp,
           fontWeight: FontWeight.w600,
         ),

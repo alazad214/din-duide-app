@@ -48,7 +48,7 @@ class TextFontStyle {
     fontWeight: FontWeight.w500,
   );
   static var textStyle26w700ccFFFFFF = GoogleFonts.poppins(
-    color: AppColors.cFFFFFF,
+    color: AppColors.cWhite,
     fontSize: 26.sp,
     fontWeight: FontWeight.w700,
   );
@@ -73,7 +73,7 @@ class TextFontStyle {
     fontWeight: FontWeight.w400,
   );
   static var textStyle16w500cFFFFFF = GoogleFonts.poppins(
-    color: AppColors.cFFFFFF,
+    color: AppColors.cWhite,
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );
@@ -230,7 +230,7 @@ class TextFontStyle {
   );
 
   static var textStyle16w600cFFFFFF = GoogleFonts.poppins(
-    color: AppColors.cFFFFFF,
+    color: AppColors.cWhite,
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
   );
@@ -247,7 +247,7 @@ class TextFontStyle {
     fontWeight: FontWeight.w500,
   );
   static var textStyle20w600cFFFFFF = GoogleFonts.poppins(
-    color: AppColors.cFFFFFF,
+    color: AppColors.cWhite,
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
   );

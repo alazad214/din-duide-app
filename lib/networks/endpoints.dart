@@ -8,14 +8,14 @@ const quranDetials = "https://online-quran-api.p.rapidapi.com/surahs/";
 
 final class NetworkConstants {
   NetworkConstants._();
-  static const ACCEPT = "Accept";
-  static const APP_KEY = "App-Key";
-  static const ACCEPT_LANGUAGE = "Accept-Language";
-  static const ACCEPT_LANGUAGE_VALUE = "pt";
-  static const APP_KEY_VALUE = String.fromEnvironment("APP_KEY_VALUE");
-  static const ACCEPT_TYPE = "application/json";
-  static const AUTHORIZATION = "Authorization";
-  static const CONTENT_TYPE = "content-Type";
+  static const accept = "Accept";
+  static const appKey = "App-Key";
+  static const acceptLanguage = "Accept-Language";
+  static const acceptLanguageValue = "pt";
+  static const appKeyValue = String.fromEnvironment("APP_KEY_VALUE");
+  static const acceptType = "application/json";
+  static const authorization = "Authorization";
+  static const contentType = "content-Type";
 }
 
 final class PaymentGateway {

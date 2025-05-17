@@ -1,3 +1,4 @@
+import 'package:din_guide_app/features/splash/welcome_screen.dart';
 import 'package:din_guide_app/helpers/app_version.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -7,7 +8,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
-import 'features/quiz/presentation/quiz_screen.dart';
 import 'helpers/di.dart';
 import 'helpers/helper_methods.dart';
 import 'helpers/provider_list.dart';
@@ -53,7 +53,7 @@ class UtillScreenMobile extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             builder: EasyLoading.init(),
-            home: const QuizScreen(),
+            home: const WelcomeScreen(),
           ),
         );
       },

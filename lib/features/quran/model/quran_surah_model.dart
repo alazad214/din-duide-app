@@ -11,17 +11,17 @@ class QuranSurahModel {
     if (json['surahList'] != null) {
       surahList = <SurahList>[];
       json['surahList'].forEach((v) {
-        surahList!.add(new SurahList.fromJson(v));
+        surahList!.add(SurahList.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['message'] = this.message;
-    data['number'] = this.number;
-    if (this.surahList != null) {
-      data['surahList'] = this.surahList!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['message'] = message;
+    data['number'] = number;
+    if (surahList != null) {
+      data['surahList'] = surahList!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -43,11 +43,11 @@ class SurahList {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['number'] = this.number;
-    data['name'] = this.name;
-    data['bangla'] = this.bangla;
-    data['source'] = this.source;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['number'] = number;
+    data['name'] = name;
+    data['bangla'] = bangla;
+    data['source'] = source;
     return data;
   }
 }

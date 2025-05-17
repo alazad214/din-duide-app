@@ -131,10 +131,10 @@ class _PrayersTimeState extends State<PrayersTime> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.primaryColor.withOpacity(0.2)),
+          border: Border.all(color: AppColors.primaryColor.withAlpha((0.2 * 255).toInt())),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withAlpha((0.2 * 255).toInt()),
               blurRadius: 6,
               offset: const Offset(0, 3),
             ),
@@ -146,9 +146,9 @@ class _PrayersTimeState extends State<PrayersTime> {
             Container(
               width: 44,
               height: 44,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.primaryColor.withOpacity(0.1),
+                color: AppColors.primaryColor,
               ),
               padding: const EdgeInsets.all(8),
               child: Image.asset(image, fit: BoxFit.contain),

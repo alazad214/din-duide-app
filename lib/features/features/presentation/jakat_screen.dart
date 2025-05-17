@@ -76,7 +76,7 @@ class ZakatScreen extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 8,
-      shadowColor: Colors.black.withOpacity(0.1),
+      shadowColor: Colors.black.withAlpha((0.1 * 255).toInt()),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

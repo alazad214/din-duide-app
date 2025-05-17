@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/app_colors.dart';
 
 class CustomSteper extends StatelessWidget {
-  final circleColor1;
-  final circleColor2;
-  final circleColor3;
-  final lineColor1;
-  final lineColor2;
+  final Color? circleColor1;
+  final Color? circleColor2;
+  final Color? circleColor3;
+  final Color? lineColor1;
+  final Color? lineColor2;
   const CustomSteper(
       {super.key,
       this.circleColor1,

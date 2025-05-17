@@ -24,7 +24,7 @@ class InternetController extends GetxController {
     if (result == ConnectivityResult.none) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!Get.isSnackbarOpen) {
-          InternetConnectionPopup(Get.context!, retryConnection);
+          internetConnectionPopup(Get.context!, retryConnection);
         }
       });
     } else {

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/app_colors.dart';
 import '../../constants/text_font_style.dart';
 
-void InternetConnectionPopup(BuildContext context, VoidCallback onRetry) {
+void internetConnectionPopup(BuildContext context, VoidCallback onRetry) {
   showDialog(
     context: context,
     barrierDismissible: false,
@@ -28,7 +28,7 @@ void InternetConnectionPopup(BuildContext context, VoidCallback onRetry) {
                 color: Colors.red,
                 size: 40.sp,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'No Internet Connection found. \nCheck your connection & try again.',
                 style: TextFontStyle.textStyle14w400c333333,

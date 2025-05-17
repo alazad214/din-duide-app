@@ -165,7 +165,7 @@ void showExitDialog(
                   color: AppColors.primaryColor,
                   textStyle: GoogleFonts.montserrat(
                       fontSize: 17.sp,
-                      color: AppColors.cFFFFFF,
+                      color: AppColors.cWhite,
                       fontWeight: FontWeight.w700),
                   context: context),
               customButton(

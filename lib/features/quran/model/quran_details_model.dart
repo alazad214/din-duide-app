@@ -16,19 +16,19 @@ class ShurahDetailsModel {
     if (json['surah'] != null) {
       surah = <Surah>[];
       json['surah'].forEach((v) {
-        surah!.add(new Surah.fromJson(v));
+        surah!.add(Surah.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['surahName'] = this.surahName;
-    data['verse'] = this.verse;
-    data['audio'] = this.audio;
-    data['bismillah'] = this.bismillah;
-    if (this.surah != null) {
-      data['surah'] = this.surah!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['surahName'] = surahName;
+    data['verse'] = verse;
+    data['audio'] = audio;
+    data['bismillah'] = bismillah;
+    if (surah != null) {
+      data['surah'] = surah!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -50,11 +50,11 @@ class Surah {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['verse'] = this.verse;
-    data['arabic'] = this.arabic;
-    data['bangla'] = this.bangla;
-    data['english'] = this.english;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['verse'] = verse;
+    data['arabic'] = arabic;
+    data['bangla'] = bangla;
+    data['english'] = english;
     return data;
   }
 }

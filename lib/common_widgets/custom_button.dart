@@ -21,7 +21,7 @@ Widget customButton(
     child: Container(
       height: height ?? 56.h,
       width: minWidth ?? double.infinity,
-      padding: padding ?? EdgeInsets.all(0),
+      padding: padding ?? const EdgeInsets.all(0),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: color ?? AppColors.primaryColor,

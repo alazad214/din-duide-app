@@ -81,7 +81,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(
-                      Images[index],
+                      images[index],
                       width: 26.w,
                       height: 26.h,
                       color:
@@ -113,7 +113,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
 }
 
-List Images = [
+List images = [
   AssetsIcons.home,
   AssetsIcons.category,
   AssetsIcons.salat,

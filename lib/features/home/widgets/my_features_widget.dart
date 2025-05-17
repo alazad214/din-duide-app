@@ -49,7 +49,7 @@ class MyFeaturesWidgets extends StatelessWidget {
           }, Colors.red.shade100),
 
           buildFeaturesItem('দোয়া', LucideIcons.hand, () {
-            Get.to(() => DuaScreen());
+            Get.to(() => const DuaScreen());
           }, Colors.purple.shade100),
 
           buildFeaturesItem('আল্লাহর নাম', LucideIcons.star, () {
