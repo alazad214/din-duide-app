@@ -33,7 +33,7 @@ Container buildQuizCard(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  '',
+                  'Discover Islam with Din Guide AI Assistant',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
