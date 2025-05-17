@@ -11,7 +11,7 @@ class IslamicQuizCategoryScreen extends StatelessWidget {
     {'title': 'Dua', 'icon': Icons.favorite},
   ];
 
-   IslamicQuizCategoryScreen({super.key});
+  IslamicQuizCategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class IslamicQuizCategoryScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(10),
-               
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
