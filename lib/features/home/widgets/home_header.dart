@@ -37,7 +37,7 @@ class HomeHeader extends StatelessWidget {
                       height: 45,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                          image: AssetImage(AssetsIcons.quiz),
+                          image: AssetImage(AssetsIcons.ai),
                           fit: BoxFit.cover,
                         ),
                         shape: const OvalBorder(),

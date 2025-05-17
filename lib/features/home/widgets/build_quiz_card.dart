@@ -33,7 +33,7 @@ Container buildQuizCard(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Test your Islamic knowledge with fun quizzes!',
+                  '',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ Container buildQuizCard(BuildContext context) {
                 const SizedBox(height: 8),
 
                 customButton(
-                  name: 'Start Quiz',
+                  name: 'Start',
                   minWidth: Get.width / 2.5,
                   height: 40,
                   onCallBack: () {},
@@ -53,7 +53,7 @@ Container buildQuizCard(BuildContext context) {
             ),
           ),
           const SizedBox(width: 10),
-          Image.asset(AssetsIcons.quizPng, height: 70),
+          Image.asset(AssetsIcons.ai, height: 70),
         ],
       ),
     );
