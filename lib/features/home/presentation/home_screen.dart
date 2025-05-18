@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_image.dart';
-import '../widgets/build_quiz_card.dart';
+import '../widgets/build_ai_card.dart';
 import '../widgets/home_header.dart';
 import '../widgets/my_features_widget.dart';
 import '../widgets/prayers_time.dart';
@@ -100,7 +100,7 @@ class HomeScreen extends ConsumerWidget {
                           salatFeatures: salatFeatures ?? () {},
                         ),
                         UIHelper.heightMedium,
-                        buildQuizCard(context),
+                        buildAIAssistant(context),
                       ],
                     ),
                   ),

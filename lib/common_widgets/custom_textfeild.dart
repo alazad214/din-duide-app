@@ -37,6 +37,7 @@ class CustomTextfield extends StatelessWidget {
   final TextAlign? textAlign;
   final VoidCallback? ontap;
   final EdgeInsetsGeometry? contentPadding;
+    final ValueChanged<String>? onSubmitted;
 
   //final double
 
@@ -71,7 +72,7 @@ class CustomTextfield extends StatelessWidget {
     this.borderColor,
     this.textAlign = TextAlign.center,
     this.ontap,
-    this.contentPadding,
+    this.contentPadding, this.onSubmitted,
   });
 
   @override
@@ -87,6 +88,8 @@ class CustomTextfield extends StatelessWidget {
       textInputAction: textInputAction,
 
       validator: validator,
+      
+      
 
       maxLines: maxline ?? 1,
       controller: controller,
