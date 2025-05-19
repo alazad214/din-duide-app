@@ -1,73 +1,73 @@
 import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/constants/text_font_style.dart';
+import 'package:din_guide_app/features/quiz/presentation/quiz_instaction_screen.dart';
+import 'package:din_guide_app/features/quiz/widgets/category_utils.dart';
+import 'package:din_guide_app/features/quiz/widgets/quiz_category_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class IslamicQuizCategoryScreen extends StatelessWidget {
-  final List<Map<String, dynamic>> categories = [
-    {'title': 'Quran', 'icon': Icons.menu_book},
-    {'title': 'Hadith', 'icon': Icons.library_books},
-    {'title': 'Seerah', 'icon': Icons.person},
-    {'title': 'Fiqh', 'icon': Icons.rule},
-    {'title': 'History', 'icon': Icons.history_edu},
-    {'title': 'Dua', 'icon': Icons.favorite},
-  ];
-
-  IslamicQuizCategoryScreen({super.key});
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF3F8F4),
-      appBar: const CustomAppbar(title: 'Islamic Quiz', leadingVisible: true),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: GridView.builder(
-          itemCount: categories.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            childAspectRatio: 1,
-          ),
-          itemBuilder: (context, index) {
-            final category = categories[index];
-            return GestureDetector(
-              onTap: () {},
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFD1E7DD), Color(0xFFB7E4C7)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
+      appBar: const CustomAppbar(title: 'Quiz Category', leadingVisible: true),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(20.sp),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Choose Category',
+                style: TextFontStyle.textStyle24w500c767676,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'Explore categories and test what you know about Islam.',
+                style: TextFontStyle.textStyle16w500cFF6B6B.copyWith(
+                  color: AppColors.c818181,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        category['icon'],
-                        color: const Color(0xFF2D6A4F),
-                        size: 32,
+                    for (int i = 0; i < categories.length; i++)
+                      InkWell(
+                        onTap: () {
+                          Get.to(
+                            () => const QuizInstructionScreen(
+                              categoryTitle: 'Quran',
+                            ),
+                          );
+                        },
+                        child: categoryCard(
+                          context,
+                          title: categories[i]['title'],
+                          image: categories[i]['icon'],
+                          index: i,
+                          ontap: () {
+                            Get.to(
+                              () => QuizInstructionScreen(
+                                categoryTitle: categories[i]['title'],
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      category['title'],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1B4332),
-                        letterSpacing: 1.0,
-                      ),
-                    ),
                   ],
                 ),
               ),
-            );
-          },
+            ],
+          ),
         ),
       ),
     );

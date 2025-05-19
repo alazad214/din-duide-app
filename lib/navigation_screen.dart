@@ -1,13 +1,13 @@
-import 'package:din_guide_app/common_widgets/exit_popup.dart';
+import 'package:din_guide_app/common_widgets/common_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_colors.dart';
-import '../../settings/presentation/settings_screen.dart';
-import '../../salat/presentation/salat_screen.dart';
-import '../../home/presentation/home_screen.dart';
-import '../../features/presentation/features_screen.dart';
+import 'constants/app_assets/assets_icons.dart';
+import 'constants/app_colors.dart';
+import 'features/settings/presentation/settings_screen.dart';
+import 'features/salat/presentation/salat_screen.dart';
+import 'features/home/presentation/home_screen.dart';
+import 'features/features/presentation/features_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -43,11 +43,14 @@ class _NavigationScreenState extends State<NavigationScreen> {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (!didPop) {
-          final shouldExit = await exitPopup(context);
-
-          if (shouldExit == true) {
-            SystemNavigator.pop();
-          }
+          await CommonPopup.popup(
+            context,
+            title: 'Exit App!',
+            subtitle: 'Are you sure you want to exit the app?',
+            ontap: () {
+              SystemNavigator.pop();
+            },
+          );
         }
       },
       child: Scaffold(

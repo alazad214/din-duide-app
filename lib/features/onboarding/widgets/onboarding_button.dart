@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../constants/app_assets/assets_icons.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/text_font_style.dart';
-import '../../bottom_nav/presentation/navigation_screen.dart';
+import '../../../navigation_screen.dart';
 
 class OnboardingButton extends StatelessWidget {
   final VoidCallback onTap;
@@ -21,7 +21,9 @@ class OnboardingButton extends StatelessWidget {
             onTap: () {
               Get.offAll(() => const NavigationScreen());
             },
-            child: Text('Skip', style: TextFontStyle.headline16w600c333333),
+            child: Text('Skip', style: TextFontStyle.textStyle16w600cFFFFFF.copyWith(
+              color: AppColors.c333333
+            )),
           ),
           GestureDetector(
             onTap: onTap,

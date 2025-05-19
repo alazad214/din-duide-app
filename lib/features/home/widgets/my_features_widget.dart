@@ -4,12 +4,12 @@ import 'package:din_guide_app/features/quran/presentation/quran_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import '../../assistant/presentation/ai_assistant_screen.dart';
 import '../../features/presentation/dua_screen.dart';
 import '../../features/presentation/roja_screen.dart';
 import '../../tasbih/tasbih_screen.dart';
 import '../../features/presentation/hajj_screen.dart';
 import '../../features/presentation/allah_name_screen.dart';
-import '../../features/presentation/jakat_screen.dart';
 
 class MyFeaturesWidgets extends StatelessWidget {
   final Function moreFeatures;
@@ -29,6 +29,9 @@ class MyFeaturesWidgets extends StatelessWidget {
         spacing: 8,
         runSpacing: 10,
         children: [
+          buildFeaturesItem('অ্যাসিস্ট্যান্ট', LucideIcons.bot, () {
+            Get.to(const ChatScreen());
+          }, Colors.green.shade100),
           buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
             Get.to(() => QuranScreen());
           }, Colors.green.shade100),
@@ -60,10 +63,6 @@ class MyFeaturesWidgets extends StatelessWidget {
             Get.to(() => const TasbihScreen());
           }, Colors.amber.shade100),
 
-          buildFeaturesItem('যাকাত', LucideIcons.dollarSign, () {
-            Get.to(() => const ZakatScreen());
-          }, Colors.indigo.shade100),
-
           buildFeaturesItem(
             'আরও',
             LucideIcons.menu,
@@ -88,12 +87,12 @@ class MyFeaturesWidgets extends StatelessWidget {
         width: Get.width / 3.8,
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(6),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withAlpha((0.3 * 255).toInt()),
-              blurRadius: 6,
-              offset: const Offset(0, 4),
+              blurRadius: 1,
+              offset: const Offset(0, 2),
             ),
           ],
         ),
@@ -106,8 +105,8 @@ class MyFeaturesWidgets extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: AppColors.c333333,
-                fontSize: 14,
+                color: AppColors.c2C2126,
+                fontSize: 10,
                 fontWeight: FontWeight.w700,
               ),
             ),

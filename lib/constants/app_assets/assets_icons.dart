@@ -23,7 +23,6 @@ class AssetsIcons {
   static String quiz = 'assets/icons/quiz.png';
   static String quizPng = 'assets/icons/quiz_png.png';
 
-
   static String feedback = 'assets/icons/feedback.png';
   static String share = 'assets/icons/share.png';
   static String version = 'assets/icons/version.png';
@@ -31,4 +30,13 @@ class AssetsIcons {
   static String internet = 'assets/icons/internet.png';
   static String facebook = 'assets/icons/facebook.png';
 
+  static String hajj = 'assets/icons/hajj.png';
+  static String history = 'assets/icons/history.png';
+  static String jakat2 = 'assets/icons/jakat2.png';
+  static String knowledge = 'assets/icons/knowledge.png';
+  static String masjid = 'assets/icons/masjid.png';
+  static String namaz = 'assets/icons/namaz.png';
+  static String nobi = 'assets/icons/nobi.png';
+  static String quran = 'assets/icons/quran.png';
+  static String roja = 'assets/icons/roja.png';
 }

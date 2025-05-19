@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../constants/app_colors.dart' show AppColors;
 import '../constants/text_font_style.dart';
 
@@ -37,7 +36,7 @@ class CustomTextfield extends StatelessWidget {
   final TextAlign? textAlign;
   final VoidCallback? ontap;
   final EdgeInsetsGeometry? contentPadding;
-    final ValueChanged<String>? onSubmitted;
+  final ValueChanged<String>? onSubmitted;
 
   //final double
 
@@ -72,7 +71,8 @@ class CustomTextfield extends StatelessWidget {
     this.borderColor,
     this.textAlign = TextAlign.center,
     this.ontap,
-    this.contentPadding, this.onSubmitted,
+    this.contentPadding,
+    this.onSubmitted,
   });
 
   @override
@@ -88,8 +88,6 @@ class CustomTextfield extends StatelessWidget {
       textInputAction: textInputAction,
 
       validator: validator,
-      
-      
 
       maxLines: maxline ?? 1,
       controller: controller,
@@ -103,26 +101,22 @@ class CustomTextfield extends StatelessWidget {
         prefixIcon: prefixIcon,
         fillColor: fillColor ?? Colors.transparent,
         filled: true,
-        contentPadding: contentPadding ??
+        contentPadding:
+            contentPadding ??
             EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
         hintText: hintText,
-        hintStyle: hintTextSyle ??
-            TextFontStyle.textStyle16w400c5C5C5C.copyWith(
-                color: AppColors.cC0C0C0, fontWeight: FontWeight.w400),
+        hintStyle:
+            hintTextSyle ??
+            const TextStyle(color: AppColors.c333333, fontSize: 16),
+
         labelText: labelText,
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1,
-          ),
+          borderSide: const BorderSide(color: Colors.red, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
-          borderSide: BorderSide(
-            color: borderColor ??  Colors.blue,
-            width: 1.5,
-          ),
+          borderSide: BorderSide(color: borderColor ?? Colors.blue, width: 1.5),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
@@ -133,10 +127,7 @@ class CustomTextfield extends StatelessWidget {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1,
-          ),
+          borderSide: const BorderSide(color: Colors.red, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
@@ -147,9 +138,10 @@ class CustomTextfield extends StatelessWidget {
         ),
       ),
 
-      style: style ??
-          TextFontStyle.textStyle16w400c5C5C5C.copyWith(
-            color: AppColors.c333333,
+      style:
+          style ??
+          TextFontStyle.textStyle16w600cFFFFFF.copyWith(
+            color: AppColors.c000000,
           ),
       keyboardType: inputType,
     );

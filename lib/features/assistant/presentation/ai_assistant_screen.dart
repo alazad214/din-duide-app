@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'package:din_guide_app/common_widgets/ai_textfield.dart';
 import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/common_widgets/custom_textfeild.dart';
+import 'package:din_guide_app/common_widgets/custom_bottom_sheet.dart';
 import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/utils/train_data.dart';
 import 'package:din_guide_app/features/assistant/service/ai_assistant_service.dart';
@@ -46,13 +47,13 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // Future<void> _clearMessages() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   await prefs.remove('chat_messages');
-  //   setState(() {
-  //     _messages.clear();
-  //   });
-  // }
+  Future<void> _clearMessages() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('chat_messages');
+    setState(() {
+      _messages.clear();
+    });
+  }
 
   void _sendMessage() async {
     final userText = _controller.text.trim();
@@ -98,18 +99,18 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             icon: const Icon(Icons.delete, color: Colors.white),
             onPressed: () {
-              // customButtomSheet(
-              //   context,
-              //   ontap: () {
-              //     _clearMessages();
-              //     Navigator.pop(context);
-              //   },
-              // );
+              customButtomSheet(
+                context,
+                ontap: () {
+                  _clearMessages();
+                  Navigator.pop(context);
+                },
+              );
             },
           ),
         ],
       ),
-      backgroundColor: const Color(0xFF222831),
+
       body: Center(
         child: Column(
           children: [
@@ -152,7 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                     top: 4,
                                   ),
                                   child: CircleAvatar(
-                                    radius: 18,
+                                    radius: 14,
                                     backgroundImage: AssetImage(AssetsIcons.ai),
                                   ),
                                 ),
@@ -221,9 +222,9 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: CustomTextfield(
+                    child: AiTextfield(
                       controller: _controller,
-                      onFieldSubmitted: (text) {
+                      onSubmitted: (text) {
                         if (text.trim().isNotEmpty) {
                           _sendMessage();
                           _controller.clear();

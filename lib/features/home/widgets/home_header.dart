@@ -1,7 +1,10 @@
 import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
+
+import '../../assistant/presentation/ai_assistant_screen.dart';
 
 class HomeHeader extends StatelessWidget {
   final VoidCallback drawerOntap;
@@ -24,23 +27,28 @@ class HomeHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 6,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppColors.primaryColor,
-                        width: 3,
-                      ),
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(const ChatScreen());
+                    },
                     child: Container(
-                      width: 45,
-                      height: 45,
-                      decoration: ShapeDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(AssetsIcons.ai),
-                          fit: BoxFit.cover,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.primaryColor,
+                          width: 3,
                         ),
-                        shape: const OvalBorder(),
+                      ),
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        decoration: ShapeDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(AssetsIcons.ai),
+                            fit: BoxFit.cover,
+                          ),
+                          shape: const OvalBorder(),
+                        ),
                       ),
                     ),
                   ),

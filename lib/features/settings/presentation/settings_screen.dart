@@ -18,10 +18,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(
-        title: 'Settings',
-         leadingVisible: false,
-      ),
+      appBar: const CustomAppbar(title: 'Settings', leadingVisible: false),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -47,25 +44,25 @@ class SettingsScreen extends StatelessWidget {
             //   title: 'Theme Change',
             //   ontap: () {},
             // ),
-            buildProfileTile(
-              image: AssetsIcons.internet,
-              title: 'Website',
-              ontap: () {
-                EasyLauncher.url(url: websiteLink);
-              },
-            ),
-            buildProfileTile(
-              image: AssetsIcons.facebook,
-              title: 'Facebook',
-              ontap: () {
-                EasyLauncher.url(url: facebookLink);
-              },
-            ),
+            // buildProfileTile(
+            //   image: AssetsIcons.internet,
+            //   title: 'Website',
+            //   ontap: () {
+            //     EasyLauncher.url(url: websiteLink);
+            //   },
+            // ),
+            // buildProfileTile(
+            //   image: AssetsIcons.facebook,
+            //   title: 'Facebook',
+            //   ontap: () {
+            //     EasyLauncher.url(url: facebookLink);
+            //   },
+            // ),
             buildProfileTile(
               image: AssetsIcons.version,
               title: 'App Version',
               ontap: () {
-             AppVersionHelper.showAppVersionDialog(context);
+                AppVersionHelper.showAppVersionDialog(context);
               },
             ),
 
