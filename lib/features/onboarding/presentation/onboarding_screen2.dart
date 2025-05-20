@@ -18,7 +18,7 @@ class OnboardingScreen2 extends StatelessWidget {
         children: [
           OnBoardingTopSection(imageUrl: AssetsImage.onboarding2),
           Padding(
-            padding: EdgeInsets.all(UIHelper.kdefaultPadding()),
+            padding: EdgeInsets.all(UIHelper.kDefaulutPadding()),
             child: Column(
               children: [
                 Text(
@@ -28,7 +28,7 @@ class OnboardingScreen2 extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextFontStyle.headline32w600c333333,
                 ),
-                UIHelper.heightSpace(10.h),
+                UIHelper.verticalSpace(10.h),
                 Text(
                   textAlign: TextAlign.center,
                   'Here, you’ll find a collection of the Quran, Hadith, and Islamic teachings. Start your journey with us today.',

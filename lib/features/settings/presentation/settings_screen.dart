@@ -81,7 +81,7 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
 
-            UIHelper.heightLarge,
+            UIHelper.verticalSpace(12),
           ],
         ),
       ),

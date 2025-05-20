@@ -3,7 +3,7 @@ import 'package:din_guide_app/common_widgets/ai_textfield.dart';
 import 'package:din_guide_app/common_widgets/auth_appbar.dart';
 import 'package:din_guide_app/common_widgets/custom_bottom_sheet.dart';
 import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
-import 'package:din_guide_app/constants/utils/train_data.dart';
+import 'package:din_guide_app/features/assistant/widgets/train_data.dart';
 import 'package:din_guide_app/features/assistant/service/ai_assistant_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

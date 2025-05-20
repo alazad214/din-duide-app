@@ -44,7 +44,7 @@ class FeaturesScreen extends StatelessWidget {
               description: 'ইসলামিক কুইজে অংশগ্রহন করুন।',
               color: Colors.green.shade100,
               ontap: () {
-                Get.to(() => CategoryScreen());
+                Get.to(() => const CategoryScreen());
               },
             ),
             FeatureCard(

@@ -1,14 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../constants/app_colors.dart';
-import '../common_widgets/custom_button.dart';
 import '../constants/app_constants.dart';
-import '../constants/text_font_style.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final GlobalKey<PopupMenuButtonState<String>> popUpGlobalkey =
@@ -92,112 +85,4 @@ Future<void> getInvisible() async {
 Future<File> getLocalFile(String filename) async {
   File f = File(filename);
   return f;
-}
-
-void showMaterialDialog(
-  BuildContext context,
-) {
-  showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-            title: Text(
-              "Do you want to exit the app?",
-              textAlign: TextAlign.center,
-              style: TextFontStyle.textStyle14w500c242424,
-            ),
-            actions: <Widget>[
-              customButton(
-                  name: "No".tr,
-                  onCallBack: () {
-                    Navigator.of(context).pop(false);
-                  },
-                  height: 30.sp,
-                  minWidth: .3.sw,
-                  borderRadius: 30.r,
-                  color: AppColors.c000000,
-                  textStyle: GoogleFonts.montserrat(
-                      fontSize: 17.sp,
-                      color: AppColors.primaryColor,
-                      fontWeight: FontWeight.w700),
-                  context: context),
-              customButton(
-                  name: "Yes".tr,
-                  onCallBack: () {
-                    if (Platform.isAndroid) {
-                      SystemNavigator.pop();
-                    } else if (Platform.isIOS) {
-                      exit(0);
-                    }
-                  },
-                  height: 30.sp,
-                  minWidth: .3.sw,
-                  borderRadius: 30.r,
-                  color: AppColors.primaryColor,
-                  textStyle: GoogleFonts.montserrat(
-                      fontSize: 17.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700),
-                  context: context),
-            ],
-          ));
-}
-
-void showExitDialog(
-  BuildContext context,
-) {
-  showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-            title: Text(
-              "Do you want to exit the app?",
-              textAlign: TextAlign.center,
-              style: TextFontStyle.textStyle18w500c333333,
-            ),
-            actions: <Widget>[
-              customButton(
-                  name: "No",
-                  onCallBack: () {
-                    Navigator.of(context).pop(false);
-                  },
-                  height: 30.sp,
-                  minWidth: .3.sw,
-                  borderRadius: 30.r,
-                  color: AppColors.primaryColor,
-                  textStyle: GoogleFonts.montserrat(
-                      fontSize: 17.sp,
-                      color: AppColors.cWhite,
-                      fontWeight: FontWeight.w700),
-                  context: context),
-              customButton(
-                  name: "Yes",
-                  onCallBack: () {
-                    if (Platform.isAndroid) {
-                      SystemNavigator.pop();
-                    } else if (Platform.isIOS) {
-                      exit(0);
-                    }
-                  },
-                  height: 30.sp,
-                  minWidth: .3.sw,
-                  borderRadius: 30.r,
-                  color: AppColors.primaryColor,
-                  textStyle: GoogleFonts.montserrat(
-                      fontSize: 17.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700),
-                  context: context),
-            ],
-          ));
-}
-
-void rotation() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Color.fromARGB(80, 0, 0, 0),
-    statusBarIconBrightness: Brightness.light,
-  ));
-
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
 }

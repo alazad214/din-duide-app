@@ -99,7 +99,7 @@ class HomeScreen extends ConsumerWidget {
                           moreFeatures: seeMoreFeatures ?? () {},
                           salatFeatures: salatFeatures ?? () {},
                         ),
-                        UIHelper.heightMedium,
+                        UIHelper.verticalSpaceMedium,
                         buildAIAssistant(context),
                       ],
                     ),
