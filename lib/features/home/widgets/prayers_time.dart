@@ -57,7 +57,7 @@ class _PrayersTimeState extends State<PrayersTime> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text("Error: ${snapshot.error}"));
+            return const Center(child: Text("Something went wrong!"));
           }
 
           final prayerData = snapshot.data;
@@ -131,7 +131,9 @@ class _PrayersTimeState extends State<PrayersTime> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.primaryColor.withAlpha((0.2 * 255).toInt())),
+          border: Border.all(
+            color: AppColors.primaryColor.withAlpha((0.2 * 255).toInt()),
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withAlpha((0.2 * 255).toInt()),

@@ -17,10 +17,9 @@ import 'helpers/provider_list.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   diSetup();
-  rotation();
   await GetStorage.init();
   await AppVersionInfo().load();
-  Get.put(InternetController(), permanent: true);
+    Get.put(InternetController(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -30,6 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     setInitValue();
+    rotation();
     return MultiProvider(
       providers: providerLists,
       child: ProviderScope(

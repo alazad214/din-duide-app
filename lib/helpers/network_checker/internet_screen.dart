@@ -2,6 +2,8 @@ import 'package:din_guide_app/common_widgets/custom_button.dart';
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import '../../constants/app_colors.dart';
 
 class NoInternetScreen extends StatelessWidget {
@@ -17,8 +19,8 @@ class NoInternetScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AssetsImage.logoPng, height: 100),
-            SizedBox(height: 20.h),
+            Image.asset(AssetsImage.logoPng, height: 100.h),
+
             Icon(Icons.wifi_off, color: Colors.red, size: 60.sp),
             Text(
               'No Internet Connection Found.\nPlease check your network and try again.',
@@ -31,7 +33,13 @@ class NoInternetScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
 
-            customButton(name: 'Retry', onCallBack: onRetry, context: context),
+            customButton(
+              height: 45.h,
+              minWidth: Get.width / 2,
+              name: 'Retry',
+              onCallBack: onRetry,
+              context: context,
+            ),
           ],
         ),
       ),

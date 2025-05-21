@@ -48,7 +48,7 @@ class InternetController extends GetxController {
   }
 
   void checkInternetLoop() {
-    _timer = Timer.periodic(const Duration(seconds: 0), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       checkInternet();
     });
   }

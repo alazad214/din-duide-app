@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/features/quiz/presentation/quiz_category_screen.dart';
 import 'package:din_guide_app/features/quran/presentation/quran_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +10,6 @@ import '../../features/presentation/dua_screen.dart';
 import '../../features/presentation/roja_screen.dart';
 import '../../tasbih/tasbih_screen.dart';
 import '../../features/presentation/hajj_screen.dart';
-import '../../features/presentation/allah_name_screen.dart';
 
 class MyFeaturesWidgets extends StatelessWidget {
   final Function moreFeatures;
@@ -32,6 +32,10 @@ class MyFeaturesWidgets extends StatelessWidget {
           buildFeaturesItem('অ্যাসিস্ট্যান্ট', LucideIcons.bot, () {
             Get.to(const ChatScreen());
           }, Colors.green.shade100),
+          buildFeaturesItem('কুইজ', LucideIcons.helpCircle, () {
+            Get.to(() => const CategoryScreen());
+          }, Colors.teal.shade100),
+
           buildFeaturesItem('কুরআন', LucideIcons.bookOpen, () {
             Get.to(() => QuranScreen());
           }, Colors.green.shade100),
@@ -54,10 +58,6 @@ class MyFeaturesWidgets extends StatelessWidget {
           buildFeaturesItem('দোয়া', LucideIcons.hand, () {
             Get.to(() => const DuaScreen());
           }, Colors.purple.shade100),
-
-          buildFeaturesItem('আল্লাহর নাম', LucideIcons.star, () {
-            Get.to(() => const AllahNameScreen());
-          }, Colors.teal.shade100),
 
           buildFeaturesItem('তাসবিহ', LucideIcons.circleDot, () {
             Get.to(() => const TasbihScreen());
@@ -99,7 +99,7 @@ class MyFeaturesWidgets extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 34, color: AppColors.c333333),
+            Icon(icon, size: 34, color: AppColors.c187488),
             const SizedBox(height: 10),
             Text(
               title,

@@ -30,7 +30,7 @@ Widget buildCarouselSlider(
               },
               itemBuilder: (context, index) {
                 return ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                   child: Image.network(
                     carouselImages[index],
                     fit: BoxFit.cover,
