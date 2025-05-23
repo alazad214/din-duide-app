@@ -1,9 +1,11 @@
 import 'package:din_guide_app/common_widgets/auth_appbar.dart';
 import 'package:din_guide_app/common_widgets/custom_textfeild.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
-import 'package:din_guide_app/features/onboarding/presentation/onboarding_screen1.dart';
+import 'package:din_guide_app/constants/text_font_style.dart';
 import 'package:din_guide_app/helpers/di.dart';
+import 'package:din_guide_app/navigation_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:din_guide_app/features/salat/data/citys.dart';
@@ -70,7 +72,7 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
           IconButton(
             onPressed: () {
               if (selectedLocation != null) {
-                Get.to(() => const OnboardingScreen1());
+                Get.to(() => const NavigationScreen());
               } else {
                 toastification.show(
                   title: const Text('Something went wrong!'),
@@ -86,7 +88,7 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(20.sp),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -113,10 +115,9 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
                     color:
                         selectedLocation == filteredCities[index]
                             ? AppColors.primaryColor
-                            : AppColors.c999999,
-                    borderRadius: BorderRadius.circular(
-                      selectedLocation == filteredCities[index] ? 4 : 4,
-                    ),
+                            : Colors.transparent,
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: AppColors.cC0C0C0C),
                   ),
 
                   child: ListTile(
@@ -127,24 +128,22 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
                         selectedLocation == filteredCities[index]
                             ? const Icon(
                               Icons.check_circle,
-                              color: AppColors.cFDB338,
+                              color: AppColors.cWhite,
                             )
                             : null,
                     leading: CircleAvatar(
                       radius: 14,
                       backgroundColor:
                           selectedLocation == filteredCities[index]
-                              ? AppColors.cFDB338
+                              ? AppColors.cWhite
                               : AppColors.c4B4B4B,
 
                       child: Text(
                         (index + 1).toString(),
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                        style: TextFontStyle.textStyle14w500c242424.copyWith(
                           color:
                               selectedLocation == filteredCities[index]
-                                  ? AppColors.cWhite
+                                  ? AppColors.c000000
                                   : AppColors.cWhite,
                         ),
                       ),
@@ -156,8 +155,8 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
                         fontWeight: FontWeight.bold,
                         color:
                             selectedLocation == filteredCities[index]
-                                ? AppColors.cFDB338
-                                : AppColors.cWhite,
+                                ? AppColors.cWhite
+                                : AppColors.c818181,
                       ),
                     ),
                     onTap: () {

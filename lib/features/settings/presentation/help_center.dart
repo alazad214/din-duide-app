@@ -1,3 +1,5 @@
+import 'package:din_guide_app/networks/endpoints.dart';
+import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common_widgets/auth_appbar.dart';
@@ -26,29 +28,33 @@ class HelpCenterScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
 
-            HelpTile(
-              icon: Icons.info_outline,
-              title: 'About Din Guide',
-              subtitle: 'Learn more about the app and features.',
-              onTap: () {},
-            ),
-            HelpTile(
-              icon: Icons.bug_report_outlined,
-              title: 'Report a Problem',
-              subtitle: 'Found a bug or issue? Let us know.',
-              onTap: () {},
-            ),
+            // HelpTile(
+            //   icon: Icons.info_outline,
+            //   title: 'About Din Guide',
+            //   subtitle: 'Learn more about the app and features.',
+            //   onTap: () {},
+            // ),
+            // HelpTile(
+            //   icon: Icons.bug_report_outlined,
+            //   title: 'Report a Problem',
+            //   subtitle: 'Found a bug or issue? Let us know.',
+            //   onTap: () {},
+            // ),
             HelpTile(
               icon: Icons.email_outlined,
               title: 'Contact Support',
               subtitle: 'Email us at support@dingude.com',
-              onTap: () {},
+              onTap: () {
+                EasyLauncher.email(email: 'alazad214@gmail.com');
+              },
             ),
             HelpTile(
               icon: Icons.privacy_tip_outlined,
               title: 'Privacy Policy',
               subtitle: 'Read how we protect your data.',
-              onTap: () {},
+              onTap: () {
+                EasyLauncher.url(url: privacyPolicy);
+              },
             ),
           ],
         ),

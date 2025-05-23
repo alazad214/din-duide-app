@@ -1,11 +1,10 @@
 import 'package:din_guide_app/constants/app_assets/assets_image.dart';
 import 'package:din_guide_app/constants/app_colors.dart';
 import 'package:din_guide_app/helpers/app_version.dart';
+import 'package:din_guide_app/networks/endpoints.dart';
+import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
-import 'about_screen.dart';
 
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});
@@ -39,13 +38,19 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ),
 
           customTile(
-            icon: Iconsax.info_circle,
-            text: 'About Us',
+            icon: Icons.privacy_tip_outlined,
+            text: 'Privacy Policy',
             ontap: () {
-              Get.to(() => const AboutUsScreen());
+              EasyLauncher.url(url: privacyPolicy);
             },
           ),
-          customTile(icon: Iconsax.setting, text: 'Settings', ontap: () {}),
+          customTile(
+            icon: Iconsax.setting,
+            text: 'Contact Support',
+            ontap: () {
+              EasyLauncher.email(email: 'alazad214@gmail.com');
+            },
+          ),
 
           const Divider(color: Colors.black54, thickness: 0.5),
           const SizedBox(height: 20),

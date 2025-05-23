@@ -2,7 +2,7 @@
 <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="din_guide_app"
+        android:label="Din Guide"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

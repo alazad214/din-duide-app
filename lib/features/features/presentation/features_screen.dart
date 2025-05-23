@@ -47,15 +47,15 @@ class FeaturesScreen extends StatelessWidget {
                 Get.to(() => const CategoryScreen());
               },
             ),
-            FeatureCard(
-              icon: LucideIcons.clock,
-              title: 'ইসলামের পঞ্চস্তম্ভ',
-              description: ' ইসলামের স্তম্ভ সম্পর্কে জানুন।',
-              color: Colors.deepOrangeAccent.shade100,
-              ontap: () {
-                Get.to(() => const NamazLearningScreen());
-              },
-            ),
+            // FeatureCard(
+            //   icon: LucideIcons.clock,
+            //   title: 'ইসলামের পঞ্চস্তম্ভ',
+            //   description: ' ইসলামের স্তম্ভ সম্পর্কে জানুন।',
+            //   color: Colors.deepOrangeAccent.shade100,
+            //   ontap: () {
+            //     Get.to(() => const NamazLearningScreen());
+            //   },
+            // ),
             FeatureCard(
               icon: LucideIcons.clock,
               title: 'নামাজ',
