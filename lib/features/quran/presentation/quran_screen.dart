@@ -1,5 +1,5 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/features/quran/controller/surah_api_controller.dart';
 import 'package:din_guide_app/features/quran/presentation/quran_detials.dart';
 import 'package:din_guide_app/features/quran/widgets/shimmer.dart';

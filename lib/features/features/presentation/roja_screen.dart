@@ -1,4 +1,4 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:flutter/material.dart';
 
 class RojaDetailsScreen extends StatelessWidget {

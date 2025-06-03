@@ -1,4 +1,4 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'dart:math' as math;

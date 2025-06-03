@@ -1,6 +1,6 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/common_widgets/custom_button.dart';
-import 'package:din_guide_app/constants/text_font_style.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/custom_button.dart';
+import 'package:din_guide_app/core/common/styles/text_font_style.dart';
 import 'package:din_guide_app/features/quiz/presentation/quiz_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

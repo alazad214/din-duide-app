@@ -1,5 +1,5 @@
-import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/utils/assets_icons.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
@@ -29,7 +29,7 @@ class HomeHeader extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(const ChatScreen());
+                      Get.to(const AiAssistantScreen());
                     },
                     child: Container(
                       decoration: BoxDecoration(

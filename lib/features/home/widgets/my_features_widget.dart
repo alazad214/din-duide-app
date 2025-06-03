@@ -1,5 +1,5 @@
 import 'dart:core';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/features/quiz/presentation/quiz_category_screen.dart';
 import 'package:din_guide_app/features/quran/presentation/quran_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class MyFeaturesWidgets extends StatelessWidget {
         runSpacing: 10,
         children: [
           buildFeaturesItem('অ্যাসিস্ট্যান্ট', LucideIcons.bot, () {
-            Get.to(const ChatScreen());
+            Get.to(const AiAssistantScreen());
           }, Colors.green.shade100),
           buildFeaturesItem('কুইজ', LucideIcons.helpCircle, () {
             Get.to(() => const CategoryScreen());

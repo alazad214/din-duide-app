@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_colors.dart';
-import '../../../constants/text_font_style.dart';
-import '../../../navigation_screen.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/styles/app_colors.dart';
+import '../../../core/common/styles/text_font_style.dart';
+import '../../bottom_nav/presentation/navigation_screen.dart';
 
 class OnboardingButton extends StatelessWidget {
   final VoidCallback onTap;

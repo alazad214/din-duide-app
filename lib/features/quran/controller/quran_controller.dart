@@ -1,5 +1,5 @@
 import 'package:din_guide_app/features/quran/model/quran_model.dart';
-import 'package:din_guide_app/networks/endpoints.dart';
+import 'package:din_guide_app/core/networks/endpoints.dart';
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;

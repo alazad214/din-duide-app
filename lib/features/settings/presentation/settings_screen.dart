@@ -1,16 +1,16 @@
-import 'package:din_guide_app/common_widgets/app_version_popup.dart';
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/core/common/widgets/app_version_popup.dart';
+import 'package:din_guide_app/core/common/utils/assets_image.dart';
 import 'package:din_guide_app/features/settings/presentation/help_center.dart';
-import 'package:din_guide_app/helpers/ui_helpers.dart';
+import 'package:din_guide_app/core/helpers/ui_helpers.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
-import '../../../common_widgets/auth_appbar.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_colors.dart';
-import '../../../constants/text_font_style.dart';
-import '../../../networks/endpoints.dart';
+import '../../../core/common/widgets/auth_appbar.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/styles/app_colors.dart';
+import '../../../core/common/styles/text_font_style.dart';
+import '../../../core/networks/endpoints.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

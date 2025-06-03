@@ -1,7 +1,7 @@
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
-import 'package:din_guide_app/helpers/app_version.dart';
-import 'package:din_guide_app/networks/endpoints.dart';
+import 'package:din_guide_app/core/common/utils/assets_image.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
+import 'package:din_guide_app/core/helpers/app_version.dart';
+import 'package:din_guide_app/core/networks/endpoints.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';

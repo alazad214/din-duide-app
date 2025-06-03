@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_image.dart';
-import '../../../constants/app_assets/networks_image.dart';
-import '../../../constants/app_colors.dart';
+import '../../../core/common/utils/assets_image.dart';
+import '../../../core/common/utils/networks_image.dart';
+import '../../../core/common/styles/app_colors.dart';
 
 class DuaDetailsScreen extends StatefulWidget {
   const DuaDetailsScreen({super.key});

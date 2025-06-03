@@ -1,6 +1,7 @@
-import 'package:din_guide_app/features/splash/welcome_screen.dart';
-import 'package:din_guide_app/helpers/app_rotation.dart';
-import 'package:din_guide_app/helpers/app_version.dart';
+import 'package:din_guide_app/core/routes/app_pages.dart';
+import 'package:din_guide_app/core/routes/app_routes.dart';
+import 'package:din_guide_app/core/helpers/app_rotation.dart';
+import 'package:din_guide_app/core/helpers/app_version.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,17 +10,17 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
-import 'helpers/di.dart';
-import 'helpers/helper_methods.dart';
-import 'helpers/network_checker/internet_controller.dart';
-import 'helpers/provider_list.dart';
+import 'core/di/appdata_di.dart';
+import 'core/helpers/helper_methods.dart';
+import 'core/helpers/network_checker/internet_controller.dart';
+import 'core/helpers/provider_list.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   diSetup();
   await GetStorage.init();
   await AppVersionInfo().load();
-    Get.put(InternetController(), permanent: true);
+  Get.put(InternetController(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -57,7 +58,8 @@ class UtillScreenMobile extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             builder: EasyLoading.init(),
-            home: const WelcomeScreen(),
+            initialRoute: AppRoutes.loadingScreen,
+            getPages: AppPages.routes,
           ),
         );
       },

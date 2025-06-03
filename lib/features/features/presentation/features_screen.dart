@@ -1,4 +1,4 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:din_guide_app/features/features/presentation/allah_name_screen.dart';
 import 'package:din_guide_app/features/features/presentation/dua_screen.dart';
 import 'package:din_guide_app/features/features/presentation/hajj_screen.dart';

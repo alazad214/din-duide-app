@@ -1,8 +1,8 @@
-import 'package:din_guide_app/networks/endpoints.dart';
+import 'package:din_guide_app/core/networks/endpoints.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common_widgets/auth_appbar.dart';
+import '../../../core/common/widgets/auth_appbar.dart';
 
 class HelpCenterScreen extends StatelessWidget {
   const HelpCenterScreen({super.key});

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import '../../../networks/endpoints.dart';
+import '../../../core/networks/endpoints.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

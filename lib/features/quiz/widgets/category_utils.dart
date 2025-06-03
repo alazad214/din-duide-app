@@ -1,4 +1,4 @@
-import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
+import 'package:din_guide_app/core/common/utils/assets_icons.dart';
 
 final List<Map<String, dynamic>> categories = [
   {'title': 'নামাজ', 'icon': AssetsIcons.namaz},

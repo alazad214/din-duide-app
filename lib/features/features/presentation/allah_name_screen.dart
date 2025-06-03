@@ -1,6 +1,6 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/app_colors.dart';
+import '../../../core/common/styles/app_colors.dart';
 import '../../home/widgets/allah_mane_list.dart';
 
 class AllahNameScreen extends StatelessWidget {

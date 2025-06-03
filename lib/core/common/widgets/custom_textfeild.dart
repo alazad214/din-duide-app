@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../constants/app_colors.dart' show AppColors;
-import '../constants/text_font_style.dart';
+import '../styles/app_colors.dart' show AppColors;
+import '../styles/text_font_style.dart';
 
 class CustomTextfield extends StatelessWidget {
   final String? hintText;

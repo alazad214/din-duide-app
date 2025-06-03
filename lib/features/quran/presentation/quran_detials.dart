@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:audioplayers/audioplayers.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/features/quran/widgets/shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:din_guide_app/features/quran/model/quran_details_model.dart';
 import 'package:din_guide_app/features/quran/service.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,60 +17,109 @@ class SurahDetailScreen extends StatefulWidget {
   State<SurahDetailScreen> createState() => _SurahDetailScreenState();
 }
 
-class _SurahDetailScreenState extends State<SurahDetailScreen> {
-  final AudioPlayer _audioPlayer = AudioPlayer();
-
+class _SurahDetailScreenState extends State<SurahDetailScreen>
+    with TickerProviderStateMixin {
   ShurahDetailsModel? surahDetails;
+  late AudioPlayer _audioPlayer;
+  bool _isPlaying = false;
+  Duration _totalDuration = Duration.zero;
+  Duration _currentPosition = Duration.zero;
+  late AnimationController _rotateController;
 
-  // Function to show the audio dialog
+  @override
+  void initState() {
+    super.initState();
+    _audioPlayer = AudioPlayer();
+    _rotateController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 10),
+    )..repeat();
+
+    // Set up audio player listeners
+    _audioPlayer.onDurationChanged.listen((duration) {
+      setState(() {
+        _totalDuration = duration;
+      });
+    });
+    _audioPlayer.onPositionChanged.listen((position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    });
+  }
+
+  void _togglePlayPause(String audioUrl) {
+    setState(() {
+      if (_isPlaying) {
+        _audioPlayer.pause();
+      } else {
+        _audioPlayer.play(UrlSource(audioUrl));
+      }
+      _isPlaying = !_isPlaying;
+    });
+  }
+
+  void _seekTo(Duration position) {
+    _audioPlayer.seek(position);
+  }
+
   void _showAudioDialog(BuildContext context, String audioUrl) {
+    _audioPlayer.stop();
+    _audioPlayer.setSourceUrl(audioUrl);
+
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text("Audio Player"),
+          title: Text("Playing ${widget.surahName}"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Playing audio for ${widget.surahName}..."),
-              const SizedBox(height: 10),
-              IconButton(
-                icon: const Icon(
-                  Icons.play_arrow,
-                  size: 40,
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  _audioPlayer.play(UrlSource(audioUrl));
+              StreamBuilder<Duration>(
+                stream: _audioPlayer.onPositionChanged,
+                builder: (context, snapshot) {
+                  final position = snapshot.data ?? _currentPosition;
+                  return Column(
+                    children: [
+                      Slider(
+                        value: position.inSeconds.toDouble(),
+                        max: _totalDuration.inSeconds.toDouble(),
+                        onChanged: (value) {
+                          _seekTo(Duration(seconds: value.toInt()));
+                        },
+                        activeColor: AppColors.primaryColor,
+                      ),
+                      Text(
+                        "${position.inMinutes}:${(position.inSeconds % 60).toString().padLeft(2, '0')} / "
+                        "${_totalDuration.inMinutes}:${(_totalDuration.inSeconds % 60).toString().padLeft(2, '0')}",
+                      ),
+                    ],
+                  );
                 },
               ),
-              IconButton(
-                icon: const Icon(
-                  Icons.pause,
-                  size: 40,
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  _audioPlayer.pause();
-                },
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.stop,
-                  size: 40,
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  _audioPlayer.stop();
-                },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      _isPlaying ? Icons.pause : Icons.play_arrow,
+                      size: 40,
+                      color: AppColors.primaryColor,
+                    ),
+                    onPressed: () => _togglePlayPause(audioUrl),
+                  ),
+                ],
               ),
             ],
           ),
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
                 _audioPlayer.stop();
+                setState(() {
+                  _isPlaying = false;
+                });
+                Navigator.of(context).pop();
               },
               child: const Text("Close"),
             ),
@@ -76,6 +127,14 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.stop();
+    _audioPlayer.dispose();
+    _rotateController.dispose();
+    super.dispose();
   }
 
   @override
@@ -94,6 +153,8 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
           }
 
           surahDetails = snapshot.data!;
+          log('audio url: ${surahDetails?.audio ?? ''}');
+
           return ListView(
             padding: const EdgeInsets.all(16.0),
             children: [
@@ -131,6 +192,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
 
               ...List.generate(surahDetails?.surah?.length ?? 0, (index) {
                 final ayah = surahDetails?.surah![index];
+
                 return Container(
                   margin: const EdgeInsets.only(bottom: 16),
                   padding: const EdgeInsets.symmetric(
@@ -144,7 +206,6 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade200,
-
                         blurRadius: 5,
                         offset: const Offset(0, 3),
                       ),
@@ -210,10 +271,17 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.primaryColor,
         onPressed: () {
-          _showAudioDialog(context, surahDetails!.audio.toString());
+          if (surahDetails?.audio != null && surahDetails!.audio!.isNotEmpty) {
+            _showAudioDialog(context, surahDetails!.audio!);
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("Audio URL not available")),
+            );
+          }
         },
-        child: const Icon(Iconsax.audio_square),
+        child: const Icon(Iconsax.audio_square, color: AppColors.cWhite),
       ),
     );
   }

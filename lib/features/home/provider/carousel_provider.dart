@@ -1,4 +1,4 @@
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/core/common/utils/assets_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final carouselIndexProvider = StateProvider<int>((ref) => 0);

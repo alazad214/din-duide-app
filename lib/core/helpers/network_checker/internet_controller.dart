@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:din_guide_app/helpers/network_checker/internet_screen.dart';
+import 'package:din_guide_app/core/helpers/network_checker/internet_screen.dart';
 import 'package:get/get.dart';
 
 class InternetController extends GetxController {

@@ -1,12 +1,12 @@
 import 'dart:developer';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/features/drawer/presentation/drawer.dart';
 import 'package:din_guide_app/features/home/widgets/build_carousel_slider.dart';
-import 'package:din_guide_app/helpers/ui_helpers.dart';
+import 'package:din_guide_app/core/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_image.dart';
+import '../../../core/common/utils/assets_image.dart';
 import '../widgets/build_ai_card.dart';
 import '../widgets/home_header.dart';
 import '../widgets/my_features_widget.dart';

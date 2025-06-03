@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/helpers/di.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/di/appdata_di.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_colors.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/styles/app_colors.dart';
 import '../data/api_service.dart';
 import '../data/citys.dart';
 import '../model/prayers_model.dart';

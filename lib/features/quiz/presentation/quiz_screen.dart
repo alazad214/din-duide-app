@@ -1,8 +1,8 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/common_widgets/common_popup.dart';
-import 'package:din_guide_app/common_widgets/custom_button.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
-import 'package:din_guide_app/constants/text_font_style.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/common_popup.dart';
+import 'package:din_guide_app/core/common/widgets/custom_button.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
+import 'package:din_guide_app/core/common/styles/text_font_style.dart';
 import 'package:din_guide_app/features/quiz/presentation/mcq_result_screen.dart';
 import 'package:din_guide_app/features/quiz/widgets/mcq_list.dart';
 import 'package:flutter/material.dart';

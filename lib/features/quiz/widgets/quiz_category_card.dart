@@ -1,4 +1,4 @@
-import 'package:din_guide_app/constants/text_font_style.dart';
+import 'package:din_guide_app/core/common/styles/text_font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

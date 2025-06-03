@@ -1,7 +1,7 @@
-import 'package:din_guide_app/navigation_screen.dart';
-import 'package:din_guide_app/helpers/di.dart';
+import 'package:din_guide_app/features/bottom_nav/presentation/navigation_screen.dart';
+import 'package:din_guide_app/core/di/appdata_di.dart';
 import 'package:get/get.dart';
-import '../features/onboarding/presentation/location_picker_screen.dart';
+import '../../features/onboarding/presentation/location_picker_screen.dart';
 
 void checkUserLogin() async {
   await Future.delayed(const Duration(seconds: 2));

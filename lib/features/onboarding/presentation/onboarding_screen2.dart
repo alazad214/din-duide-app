@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_image.dart';
-import '../../../constants/text_font_style.dart';
-import '../../../helpers/ui_helpers.dart';
-import '../../../navigation_screen.dart';
+import '../../../core/common/utils/assets_image.dart';
+import '../../../core/common/styles/text_font_style.dart';
+import '../../../core/helpers/ui_helpers.dart';
+import '../../bottom_nav/presentation/navigation_screen.dart';
 import '../widgets/onboarding_button.dart';
 import '../widgets/onboarding_top_section.dart';
 

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constants/app_assets/assets_image.dart';
-import '../../helpers/check_login.dart';
+import '../../core/common/utils/assets_image.dart';
+import '../../core/helpers/check_login.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();

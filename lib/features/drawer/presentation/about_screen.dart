@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../common_widgets/auth_appbar.dart';
+import '../../../core/common/widgets/auth_appbar.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});

@@ -1,10 +1,10 @@
-import 'package:din_guide_app/common_widgets/custom_button.dart';
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/core/common/widgets/custom_button.dart';
+import 'package:din_guide_app/core/common/utils/assets_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-import '../../constants/app_colors.dart';
+import '../../common/styles/app_colors.dart';
 
 class NoInternetScreen extends StatelessWidget {
   final VoidCallback onRetry;

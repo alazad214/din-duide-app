@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../constants/app_colors.dart';
-import '../constants/text_font_style.dart';
+import '../styles/app_colors.dart';
+import '../styles/text_font_style.dart';
 
 Widget customButton(
     {required String name,

@@ -1,11 +1,11 @@
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:din_guide_app/features/tasbih/tasbih_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../constants/app_assets/assets_image.dart';
-import '../../common_widgets/custom_button.dart';
-import '../../constants/app_colors.dart';
-import '../../constants/text_font_style.dart';
+import '../../core/common/utils/assets_image.dart';
+import '../../core/common/widgets/custom_button.dart';
+import '../../core/common/styles/app_colors.dart';
+import '../../core/common/styles/text_font_style.dart';
 
 class TasbihScreen extends StatefulWidget {
   const TasbihScreen({super.key});

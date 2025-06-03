@@ -1,4 +1,4 @@
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme = ThemeData(

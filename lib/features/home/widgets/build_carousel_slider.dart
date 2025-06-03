@@ -1,5 +1,5 @@
-import 'package:din_guide_app/constants/app_assets/networks_image.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/utils/networks_image.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../provider/carousel_provider.dart';

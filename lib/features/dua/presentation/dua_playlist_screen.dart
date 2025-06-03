@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_assets/assets_image.dart';
-import '../../../constants/app_colors.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/utils/assets_image.dart';
+import '../../../core/common/styles/app_colors.dart';
 import 'dua_details_screen.dart' show DuaDetailsScreen;
 
 class DuaPlaylistScreen extends StatefulWidget {

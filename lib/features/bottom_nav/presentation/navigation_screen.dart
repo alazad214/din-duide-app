@@ -1,13 +1,13 @@
-import 'package:din_guide_app/common_widgets/common_popup.dart';
+import 'package:din_guide_app/core/common/widgets/common_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'constants/app_assets/assets_icons.dart';
-import 'constants/app_colors.dart';
-import 'features/settings/presentation/settings_screen.dart';
-import 'features/salat/presentation/salat_screen.dart';
-import 'features/home/presentation/home_screen.dart';
-import 'features/features/presentation/features_screen.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/styles/app_colors.dart';
+import '../../settings/presentation/settings_screen.dart';
+import '../../salat/presentation/salat_screen.dart';
+import '../../home/presentation/home_screen.dart';
+import '../../features/presentation/features_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});

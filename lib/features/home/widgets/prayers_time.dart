@@ -1,12 +1,12 @@
-import 'package:din_guide_app/constants/app_assets/assets_image.dart';
+import 'package:din_guide_app/core/common/utils/assets_image.dart';
 import 'package:din_guide_app/features/home/widgets/salat_popup.dart';
 import 'package:din_guide_app/features/salat/data/api_service.dart';
 import 'package:din_guide_app/features/salat/model/prayers_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../constants/app_colors.dart';
-import '../../../helpers/di.dart';
+import '../../../core/common/styles/app_colors.dart';
+import '../../../core/di/appdata_di.dart';
 
 class PrayersTime extends StatefulWidget {
   const PrayersTime({super.key});

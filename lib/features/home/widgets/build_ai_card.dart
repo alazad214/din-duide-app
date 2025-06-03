@@ -2,9 +2,9 @@ import 'package:din_guide_app/features/assistant/presentation/ai_assistant_scree
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../common_widgets/custom_button.dart';
-import '../../../constants/app_assets/assets_icons.dart';
-import '../../../constants/app_colors.dart';
+import '../../../core/common/widgets/custom_button.dart';
+import '../../../core/common/utils/assets_icons.dart';
+import '../../../core/common/styles/app_colors.dart';
 
 Container buildAIAssistant(BuildContext context) {
   return Container(
@@ -48,7 +48,7 @@ Container buildAIAssistant(BuildContext context) {
                 minWidth: Get.width / 2.5,
                 height: 40,
                 onCallBack: () {
-                  Get.to(const ChatScreen());
+                  Get.to(const AiAssistantScreen());
                 },
                 context: context,
               ),

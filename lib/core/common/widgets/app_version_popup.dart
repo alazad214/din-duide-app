@@ -1,5 +1,5 @@
-import 'package:din_guide_app/common_widgets/custom_button.dart';
-import 'package:din_guide_app/constants/app_colors.dart';
+import 'package:din_guide_app/core/common/widgets/custom_button.dart';
+import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 

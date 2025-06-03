@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:din_guide_app/common_widgets/ai_textfield.dart';
-import 'package:din_guide_app/common_widgets/auth_appbar.dart';
-import 'package:din_guide_app/common_widgets/custom_bottom_sheet.dart';
-import 'package:din_guide_app/constants/app_assets/assets_icons.dart';
+import 'package:din_guide_app/core/common/widgets/ai_textfield.dart';
+import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
+import 'package:din_guide_app/core/common/widgets/custom_bottom_sheet.dart';
+import 'package:din_guide_app/core/common/utils/assets_icons.dart';
 import 'package:din_guide_app/features/assistant/widgets/train_data.dart';
 import 'package:din_guide_app/features/assistant/service/ai_assistant_service.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +11,14 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+class AiAssistantScreen extends StatefulWidget {
+  const AiAssistantScreen({super.key});
 
   @override
-  State<ChatScreen> createState() => _ChatScreenState();
+  State<AiAssistantScreen> createState() => _AiAssistantScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _AiAssistantScreenState extends State<AiAssistantScreen> {
   final TextEditingController _controller = TextEditingController();
   final AssistantService assistantService = AssistantService();
   final List<Map<String, dynamic>> _messages = [];
