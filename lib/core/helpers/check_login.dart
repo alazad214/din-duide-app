@@ -1,5 +1,5 @@
 import 'package:din_guide_app/features/bottom_nav/presentation/navigation_screen.dart';
-import 'package:din_guide_app/core/di/appdata_di.dart';
+import 'package:din_guide_app/core/networks/di/appdata_di.dart';
 import 'package:get/get.dart';
 import '../../features/onboarding/presentation/location_picker_screen.dart';
 

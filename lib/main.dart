@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
-import 'core/di/appdata_di.dart';
+import 'core/networks/di/appdata_di.dart';
 import 'core/helpers/helper_methods.dart';
 import 'core/helpers/network_checker/internet_controller.dart';
 import 'core/helpers/provider_list.dart';

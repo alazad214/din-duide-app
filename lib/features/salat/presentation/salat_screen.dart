@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
-import 'package:din_guide_app/core/di/appdata_di.dart';
+import 'package:din_guide_app/core/networks/di/appdata_di.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../core/common/utils/assets_icons.dart';

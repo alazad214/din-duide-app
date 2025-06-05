@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../core/common/styles/app_colors.dart';
-import '../../../core/di/appdata_di.dart';
+import '../../../core/networks/di/appdata_di.dart';
 
 class PrayersTime extends StatefulWidget {
   const PrayersTime({super.key});
