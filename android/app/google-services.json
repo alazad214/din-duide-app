@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "726011282042",
+    "project_id": "mimetic-campus-405713",
+    "storage_bucket": "mimetic-campus-405713.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726011282042:android:eddd81a7a0bc7d670031c3",
+        "android_client_info": {
+          "package_name": "com.example.din_guide_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQqWYqv2MevVheJFFLjhHWfZtPtkLH_dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,8 @@ import 'package:din_guide_app/core/routes/app_pages.dart';
 import 'package:din_guide_app/core/routes/app_routes.dart';
 import 'package:din_guide_app/core/helpers/app_rotation.dart';
 import 'package:din_guide_app/core/helpers/app_version.dart';
+import 'package:din_guide_app/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,6 +19,8 @@ import 'core/helpers/provider_list.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   diSetup();
   await GetStorage.init();
   await AppVersionInfo().load();
