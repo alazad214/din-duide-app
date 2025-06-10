@@ -1,5 +1,6 @@
 class AssetsImage {
   AssetsImage._();
+  static String splashBG = 'assets/images/splash_bg.png';
   static String bg = 'assets/icons/bg.png';
   static String bg2 = 'assets/images/bg2.png';
   static String bg3 = 'assets/images/bg3.jpg';
