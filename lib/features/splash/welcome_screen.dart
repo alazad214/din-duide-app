@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../core/common/utils/assets_image.dart';
 import '../../core/helpers/check_login.dart';
@@ -25,16 +26,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
           SizedBox(
             height: Get.height / 1,
             width: Get.width / 1,
-            child: Image.asset(AssetsImage.bg, fit: BoxFit.cover),
+            child: Image.asset(AssetsImage.splashBG, fit: BoxFit.cover),
           ),
-          SafeArea(
-            child: Center(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(20),
-                child: Column(children: [Image.asset(AssetsImage.logoPng)]),
-              ),
-            ),
-          ),
+          Center(child: Image.asset(AssetsImage.logoPng, height: 150.h,)),
         ],
       ),
     );

@@ -117,7 +117,7 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
                             ? AppColors.primaryColor
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: AppColors.cC0C0C0C),
+                    border: Border.all(color: AppColors.c1F1F33),
                   ),
 
                   child: ListTile(

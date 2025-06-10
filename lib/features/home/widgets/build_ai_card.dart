@@ -13,7 +13,7 @@ Container buildAIAssistant(BuildContext context) {
     padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
-        colors: [AppColors.primaryColor, AppColors.secondaryColor2],
+        colors: [AppColors.primaryColor, AppColors.primaryColor],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
