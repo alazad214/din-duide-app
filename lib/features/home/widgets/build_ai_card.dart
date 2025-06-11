@@ -18,13 +18,6 @@ Container buildAIAssistant(BuildContext context) {
         end: Alignment.bottomRight,
       ),
       borderRadius: BorderRadius.circular(8),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withAlpha((0.3 * 255).toInt()),
-          blurRadius: 10,
-          offset: const Offset(0, 4),
-        ),
-      ],
     ),
     child: Row(
       children: [
@@ -34,7 +27,7 @@ Container buildAIAssistant(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Discover Islam with Din Guide AI Assistant',
+                'দিন গাইড এআই সহকারী দিয়ে ইসলামকে জানুন।',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -44,9 +37,11 @@ Container buildAIAssistant(BuildContext context) {
               const SizedBox(height: 8),
 
               customButton(
-                name: 'Start',
+                name: 'শুরু করুন',
                 minWidth: Get.width / 2.5,
                 height: 40,
+                color: AppColors.c187488,
+
                 onCallBack: () {
                   Get.to(const AiAssistantScreen());
                 },

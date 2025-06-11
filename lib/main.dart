@@ -1,3 +1,4 @@
+import 'package:din_guide_app/core/common/styles/light_theme.dart';
 import 'package:din_guide_app/core/routes/app_pages.dart';
 import 'package:din_guide_app/core/routes/app_routes.dart';
 import 'package:din_guide_app/core/helpers/app_rotation.dart';
@@ -60,6 +61,7 @@ class UtillScreenMobile extends StatelessWidget {
       builder: (_, child) {
         return ToastificationWrapper(
           child: GetMaterialApp(
+            theme: lightTheme,
             debugShowCheckedModeBanner: false,
             builder: EasyLoading.init(),
             initialRoute: AppRoutes.loadingScreen,

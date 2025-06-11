@@ -19,7 +19,7 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(title: 'Quiz Result', leadingVisible: true),
+      appBar: const CustomAppbar(title: 'কুইজের ফলাফল', leadingVisible: true),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.sp),
         child: Column(
@@ -120,7 +120,7 @@ class ResultScreen extends StatelessWidget {
       bottomSheet: Padding(
         padding: EdgeInsets.all(20.sp),
         child: customButton(
-          name: 'Go to home',
+          name: 'হোম পেজে যান',
           onCallBack: () {
             Get.offAll(() => const NavigationScreen());
           },

@@ -2,6 +2,7 @@ import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:din_guide_app/core/common/widgets/custom_textfeild.dart';
 import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/core/common/styles/text_font_style.dart';
+import 'package:din_guide_app/core/helpers/ui_helpers.dart';
 import 'package:din_guide_app/core/networks/di/appdata_di.dart';
 import 'package:din_guide_app/features/bottom_nav/presentation/navigation_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,14 @@ import 'package:iconsax/iconsax.dart';
 import 'package:din_guide_app/features/salat/data/citys.dart';
 import 'package:toastification/toastification.dart';
 
-class LocationPickerScreen extends StatefulWidget {
-  const LocationPickerScreen({super.key});
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
 
   @override
-  LocationPickerScreenState createState() => LocationPickerScreenState();
+  LocationScreenState createState() => LocationScreenState();
 }
 
-class LocationPickerScreenState extends State<LocationPickerScreen> {
+class LocationScreenState extends State<LocationScreen> {
   String? selectedLocation;
   List<String> filteredCities = List.from(citys);
   TextEditingController searchController = TextEditingController();
@@ -94,14 +95,14 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
           children: [
             CustomTextfield(
               controller: searchController,
-              hintText: 'Search for a city...',
+              hintText: 'আপনার শহর সার্চ করুন..',
               prefixIcon: const Icon(
                 Iconsax.search_normal,
                 color: Colors.black26,
               ),
             ),
 
-            const SizedBox(height: 16),
+            UIHelper.verticalSpace(16.h),
             ListView.builder(
               itemCount: filteredCities.length,
               shrinkWrap: true,
@@ -110,20 +111,24 @@ class LocationPickerScreenState extends State<LocationPickerScreen> {
               itemBuilder: (context, index) {
                 return Container(
                   clipBehavior: Clip.antiAlias,
-                  margin: const EdgeInsets.only(bottom: 8),
+                  margin: EdgeInsets.only(bottom: 8.h),
                   decoration: BoxDecoration(
                     color:
                         selectedLocation == filteredCities[index]
                             ? AppColors.primaryColor
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: AppColors.c1F1F33),
+                    border: Border.all(
+                      color:
+                          selectedLocation == filteredCities[index]
+                              ? AppColors.primaryColor
+                              : AppColors.c1F1F33,
+                      width: 0.2,
+                    ),
                   ),
 
                   child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                    ),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
                     trailing:
                         selectedLocation == filteredCities[index]
                             ? const Icon(

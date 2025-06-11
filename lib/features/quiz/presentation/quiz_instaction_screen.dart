@@ -15,7 +15,7 @@ class QuizInstructionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        title: '$categoryTitle Category',
+        title: '$categoryTitle ক্যাটাগরি',
         leadingVisible: true,
       ),
 
@@ -24,17 +24,21 @@ class QuizInstructionScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Instructions', style: TextFontStyle.textStyle24w500c767676),
+            Text('নির্দেশাবলি', style: TextFontStyle.textStyle24w500c767676),
             const SizedBox(height: 16),
-            instructionPoint('Read each question carefully.'),
-            instructionPoint('Select only one option per question.'),
-            instructionPoint('Once selected, the option cannot be changed.'),
-            instructionPoint('You can go back to previous questions.'),
-            instructionPoint('Try to answer all the questions.'),
-            instructionPoint('No time limit to complete the quiz.'),
-            instructionPoint('You can exit the quiz at any time.'),
+            instructionPoint('প্রতিটি প্রশ্ন মনোযোগ দিয়ে পড়ুন।'),
             instructionPoint(
-              'If you answer less than 50% of the questions, the result screen will not be shown.',
+              'প্রতিটি প্রশ্নের জন্য কেবল একটি অপশন নির্বাচন করুন।',
+            ),
+            instructionPoint(
+              'একবার অপশন বেছে নেওয়ার পর তা পরিবর্তন করা যাবে না।',
+            ),
+            instructionPoint('আপনি পূর্বের প্রশ্নগুলোতে ফিরে যেতে পারবেন।'),
+            instructionPoint('সকল প্রশ্নের উত্তর দেওয়ার চেষ্টা করুন।'),
+            instructionPoint('কুইজ সম্পন্ন করার জন্য কোনো সময়সীমা নেই।'),
+            instructionPoint('আপনি যেকোনো সময় কুইজ থেকে বের হতে পারেন।'),
+            instructionPoint(
+              'আপনি যদি ৫০% এর কম প্রশ্নের উত্তর দেন, তবে ফলাফল প্রদর্শন করা হবে না।',
             ),
           ],
         ),
@@ -42,7 +46,7 @@ class QuizInstructionScreen extends StatelessWidget {
       bottomSheet: Padding(
         padding: EdgeInsets.all(20.sp),
         child: customButton(
-          name: 'Start Quiz',
+          name: 'শুরু করুন',
           onCallBack: () {
             Get.to(() => QuizScreen(category: categoryTitle));
           },
