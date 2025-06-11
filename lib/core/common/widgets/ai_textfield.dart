@@ -46,12 +46,12 @@ class AiTextfield extends StatelessWidget {
       onFieldSubmitted: onSubmitted,
 
       decoration: InputDecoration(
-        hintText: "Type a message...",
+        hintText: "একটি বার্তা লিখুন...",
         hintStyle: const TextStyle(color: Colors.blueGrey),
         prefixIcon: IconButton(
           icon: const Icon(Icons.emoji_emotions_outlined),
           onPressed: () {
-            FocusScope.of(context).unfocus(); // Hide keyboard
+            FocusScope.of(context).unfocus();
             _showEmojiPickerPopup(context);
           },
         ),

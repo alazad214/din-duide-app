@@ -93,7 +93,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        title: 'Din Guide Asssitant',
+        title: 'দ্বীন গাইড অ্যাসিস্ট্যাস্ট',
         leadingVisible: true,
         actions: [
           IconButton(
@@ -121,7 +121,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
-                            'No messages yet. Start the conversation!',
+                            'এখনও কোনো বার্তা নেই। আলাপ শুরু করুন!',
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,

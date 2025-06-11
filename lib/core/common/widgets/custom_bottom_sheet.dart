@@ -29,7 +29,7 @@ Future<dynamic> customButtomSheet(
               ),
               const SizedBox(height: 8),
               Text(
-                title ?? 'Clear Conversation Memory?',
+                title ?? 'কথোপকথনের স্মৃতি মুছবেন?',
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -38,7 +38,8 @@ Future<dynamic> customButtomSheet(
               const SizedBox(height: 8),
               Text(
                 textAlign: TextAlign.center,
-                subtitle ?? 'Are you sure you want to clear recent memory?',
+                subtitle ??
+                    'আপনি কি নিশ্চিত যে আপনি সাম্প্রতিক স্মৃতি মুছে ফেলতে চান?',
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
@@ -61,7 +62,7 @@ Future<dynamic> customButtomSheet(
                         ),
                       ),
                       child: const Text(
-                        'Cancel',
+                        'বাতিল ',
                         style: TextStyle(
                           color: Colors.black87,
                           fontWeight: FontWeight.bold,
@@ -83,7 +84,7 @@ Future<dynamic> customButtomSheet(
                         ),
                       ),
                       child: const Text(
-                        'Yes',
+                        'হ্যাঁ',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

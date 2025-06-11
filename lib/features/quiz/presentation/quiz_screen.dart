@@ -75,7 +75,7 @@ class _QuizScreenState extends State<QuizScreen> {
     if (quizData.isEmpty) {
       return Scaffold(
         appBar: CustomAppbar(
-          title: '${widget.category} Category',
+          title: '${widget.category} ক্যাটাগরি',
           leadingVisible: true,
         ),
         body: Center(
@@ -91,7 +91,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
     return Scaffold(
       appBar: CustomAppbar(
-        title: '${widget.category} Category',
+        title: '${widget.category} ক্যাটাগরি',
         leadingVisible: true,
       ),
       body: Padding(
@@ -127,7 +127,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 border: Border.all(color: Colors.black12),
               ),
               child: Text(
-                'Question: ${currentQuiz["question"]}',
+                'প্রশ্ন: ${currentQuiz["question"]}',
                 style: TextFontStyle.textStyle13w400c818181,
               ),
             ),
@@ -214,7 +214,7 @@ class _QuizScreenState extends State<QuizScreen> {
             if (currentIndex > 0)
               Expanded(
                 child: customButton(
-                  name: 'Previous',
+                  name: 'পূর্ববর্তী',
                   onCallBack: prevQuestion,
                   context: context,
                 ),
@@ -225,14 +225,14 @@ class _QuizScreenState extends State<QuizScreen> {
             currentIndex == quizData.length - 1
                 ? Expanded(
                   child: customButton(
-                    name: 'Submit',
+                    name: 'সাবমিট করুন',
                     onCallBack: submitQuiz,
                     context: context,
                   ),
                 )
                 : Expanded(
                   child: customButton(
-                    name: 'Next',
+                    name: 'পরবর্তী',
                     onCallBack: nextQuestion,
                     context: context,
                   ),

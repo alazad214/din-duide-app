@@ -45,8 +45,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
         if (!didPop) {
           await CommonPopup.popup(
             context,
-            title: 'Exit App!',
-            subtitle: 'Are you sure you want to exit the app?',
+            title: 'বাহির  হোন!',
+            subtitle: 'আপনি কি অ্যাপ থেকে বের হতে চান?',
             ontap: () {
               SystemNavigator.pop();
             },
@@ -123,4 +123,4 @@ List images = [
   AssetsIcons.settings,
 ];
 
-List<String> labels = ["Home", "Features", "Salat", "Settings"];
+List<String> labels = ["হোম", "ফিচারস", "নামাজ", "সেটিংস"];

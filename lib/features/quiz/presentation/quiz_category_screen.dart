@@ -14,7 +14,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(title: 'Quiz Category', leadingVisible: true),
+      appBar: const CustomAppbar(title: 'ক্যাটাগরি নির্বাচন', leadingVisible: true),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20.sp),
@@ -22,12 +22,12 @@ class CategoryScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Choose Category',
+                'ক্যাটাগরি বেছে নিন',
                 style: TextFontStyle.textStyle24w500c767676,
               ),
               const SizedBox(height: 10),
               Text(
-                'Explore categories and test what you know about Islam.',
+                'ক্যাটাগরিগুলো অন্বেষণ করুন এবং ইসলামের সম্পর্কে আপনার জ্ঞান পরীক্ষা করুন।',
                 style: TextFontStyle.textStyle16w500cFF6B6B.copyWith(
                   color: AppColors.c818181,
                 ),
