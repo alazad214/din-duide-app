@@ -1,4 +1,4 @@
-package com.example.din_guide_app
+package com.islamic.dinguide
 
 import io.flutter.embedding.android.FlutterActivity
 

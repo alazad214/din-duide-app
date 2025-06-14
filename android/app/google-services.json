@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:726011282042:android:eddd81a7a0bc7d670031c3",
+        "mobilesdk_app_id": "1:726011282042:android:b91a81ad1a675c8e0031c3",
         "android_client_info": {
-          "package_name": "com.example.din_guide_app"
+          "package_name": "com.islamic.dinguide"
         }
       },
       "oauth_client": [],

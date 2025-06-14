@@ -31,7 +31,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
           const SizedBox(height: 20),
           customTile(
             icon: Iconsax.home,
-            text: 'Home',
+            text: 'হোম',
             ontap: () {
               Navigator.pop(context);
             },
@@ -39,14 +39,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
           customTile(
             icon: Icons.privacy_tip_outlined,
-            text: 'Privacy Policy',
+            text: 'প্রাইভেসি পলিসি',
             ontap: () {
               EasyLauncher.url(url: privacyPolicy);
             },
           ),
           customTile(
             icon: Iconsax.setting,
-            text: 'Contact Support',
+            text: 'কন্ট্রাক্ট সাপোর্ট',
             ontap: () {
               EasyLauncher.email(email: 'alazad214@gmail.com');
             },
@@ -57,7 +57,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Text(
-              'Version: ${versionInfo.version}',
+              'ভার্সন: ${versionInfo.version}',
               style: const TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.bold,

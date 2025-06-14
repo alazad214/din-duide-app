@@ -1,6 +1,5 @@
 const String salatUrl = "https://muslimsalat.com";
-const String privacyPolicy =
-    "https://dinguide.netlify.app/";
+const String privacyPolicy = "https://dinguide.netlify.app/";
 const String websiteLink = "https://alazad.netlify.app/#/minified:wB";
 const String facebookLink = "https://www.facebook.com/azad214official";
 const quranAPI = "https://api.alquran.cloud/v1/quran/quran-uthmani";

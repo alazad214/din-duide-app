@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:din_guide_app/core/common/styles/app_colors.dart';
 import 'package:din_guide_app/features/quran/widgets/shimmer.dart';
@@ -7,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:din_guide_app/core/common/widgets/auth_appbar.dart';
 import 'package:din_guide_app/features/quran/model/quran_details_model.dart';
 import 'package:din_guide_app/features/quran/service.dart';
-import 'package:iconsax/iconsax.dart';
+// import 'package:iconsax/iconsax.dart';
 
 class SurahDetailScreen extends StatefulWidget {
   final String surahName;
@@ -21,9 +20,9 @@ class _SurahDetailScreenState extends State<SurahDetailScreen>
     with TickerProviderStateMixin {
   ShurahDetailsModel? surahDetails;
   late AudioPlayer _audioPlayer;
-  bool _isPlaying = false;
-  Duration _totalDuration = Duration.zero;
-  Duration _currentPosition = Duration.zero;
+  // bool _isPlaying = false;
+  // Duration _totalDuration = Duration.zero;
+  // Duration _currentPosition = Duration.zero;
   late AnimationController _rotateController;
 
   @override
@@ -38,96 +37,96 @@ class _SurahDetailScreenState extends State<SurahDetailScreen>
     // Set up audio player listeners
     _audioPlayer.onDurationChanged.listen((duration) {
       setState(() {
-        _totalDuration = duration;
+        // _totalDuration = duration;
       });
     });
     _audioPlayer.onPositionChanged.listen((position) {
       setState(() {
-        _currentPosition = position;
+        // _currentPosition = position;
       });
     });
   }
 
-  void _togglePlayPause(String audioUrl) {
-    setState(() {
-      if (_isPlaying) {
-        _audioPlayer.pause();
-      } else {
-        _audioPlayer.play(UrlSource(audioUrl));
-      }
-      _isPlaying = !_isPlaying;
-    });
-  }
+  // void _togglePlayPause(String audioUrl) {
+  //   setState(() {
+  //     if (_isPlaying) {
+  //       _audioPlayer.pause();
+  //     } else {
+  //       _audioPlayer.play(UrlSource(audioUrl));
+  //     }
+  //     _isPlaying = !_isPlaying;
+  //   });
+  // }
 
-  void _seekTo(Duration position) {
-    _audioPlayer.seek(position);
-  }
+  // void _seekTo(Duration position) {
+  //   _audioPlayer.seek(position);
+  // }
 
-  void _showAudioDialog(BuildContext context, String audioUrl) {
-    _audioPlayer.stop();
-    _audioPlayer.setSourceUrl(audioUrl);
+  // void _showAudioDialog(BuildContext context, String audioUrl) {
+  //   _audioPlayer.stop();
+  //   _audioPlayer.setSourceUrl(audioUrl);
 
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Playing ${widget.surahName}"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              StreamBuilder<Duration>(
-                stream: _audioPlayer.onPositionChanged,
-                builder: (context, snapshot) {
-                  final position = snapshot.data ?? _currentPosition;
-                  return Column(
-                    children: [
-                      Slider(
-                        value: position.inSeconds.toDouble(),
-                        max: _totalDuration.inSeconds.toDouble(),
-                        onChanged: (value) {
-                          _seekTo(Duration(seconds: value.toInt()));
-                        },
-                        activeColor: AppColors.primaryColor,
-                      ),
-                      Text(
-                        "${position.inMinutes}:${(position.inSeconds % 60).toString().padLeft(2, '0')} / "
-                        "${_totalDuration.inMinutes}:${(_totalDuration.inSeconds % 60).toString().padLeft(2, '0')}",
-                      ),
-                    ],
-                  );
-                },
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      _isPlaying ? Icons.pause : Icons.play_arrow,
-                      size: 40,
-                      color: AppColors.primaryColor,
-                    ),
-                    onPressed: () => _togglePlayPause(audioUrl),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                _audioPlayer.stop();
-                setState(() {
-                  _isPlaying = false;
-                });
-                Navigator.of(context).pop();
-              },
-              child: const Text("Close"),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return AlertDialog(
+  //         title: Text("Playing ${widget.surahName}"),
+  //         content: Column(
+  //           mainAxisSize: MainAxisSize.min,
+  //           children: [
+  //             StreamBuilder<Duration>(
+  //               stream: _audioPlayer.onPositionChanged,
+  //               builder: (context, snapshot) {
+  //                 final position = snapshot.data ?? _currentPosition;
+  //                 return Column(
+  //                   children: [
+  //                     Slider(
+  //                       value: position.inSeconds.toDouble(),
+  //                       max: _totalDuration.inSeconds.toDouble(),
+  //                       onChanged: (value) {
+  //                         _seekTo(Duration(seconds: value.toInt()));
+  //                       },
+  //                       activeColor: AppColors.primaryColor,
+  //                     ),
+  //                     Text(
+  //                       "${position.inMinutes}:${(position.inSeconds % 60).toString().padLeft(2, '0')} / "
+  //                       "${_totalDuration.inMinutes}:${(_totalDuration.inSeconds % 60).toString().padLeft(2, '0')}",
+  //                     ),
+  //                   ],
+  //                 );
+  //               },
+  //             ),
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 IconButton(
+  //                   icon: Icon(
+  //                     _isPlaying ? Icons.pause : Icons.play_arrow,
+  //                     size: 40,
+  //                     color: AppColors.primaryColor,
+  //                   ),
+  //                   onPressed: () => _togglePlayPause(audioUrl),
+  //                 ),
+  //               ],
+  //             ),
+  //           ],
+  //         ),
+  //         actions: [
+  //           TextButton(
+  //             onPressed: () {
+  //               _audioPlayer.stop();
+  //               setState(() {
+  //                 _isPlaying = false;
+  //               });
+  //               Navigator.of(context).pop();
+  //             },
+  //             child: const Text("Close"),
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 
   @override
   void dispose() {
@@ -270,19 +269,19 @@ class _SurahDetailScreenState extends State<SurahDetailScreen>
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primaryColor,
-        onPressed: () {
-          if (surahDetails?.audio != null && surahDetails!.audio!.isNotEmpty) {
-            _showAudioDialog(context, surahDetails!.audio!);
-          } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Audio URL not available")),
-            );
-          }
-        },
-        child: const Icon(Iconsax.audio_square, color: AppColors.cWhite),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: AppColors.primaryColor,
+      //   onPressed: () {
+      //     if (surahDetails?.audio != null && surahDetails!.audio!.isNotEmpty) {
+      //       _showAudioDialog(context, surahDetails!.audio!);
+      //     } else {
+      //       ScaffoldMessenger.of(context).showSnackBar(
+      //         const SnackBar(content: Text("Audio URL not available")),
+      //       );
+      //     }
+      //   },
+      //   child: const Icon(Iconsax.audio_square, color: AppColors.cWhite),
+      // ),
     );
   }
 }

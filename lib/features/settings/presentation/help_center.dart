@@ -10,7 +10,7 @@ class HelpCenterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(title: 'Help Center'),
+      appBar: const CustomAppbar(title: 'Help Center', leadingVisible: true,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
