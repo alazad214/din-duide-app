@@ -27,14 +27,14 @@ class SettingsScreen extends StatelessWidget {
 
             buildProfileTile(
               image: AssetsIcons.help,
-              title: 'Help Center',
+              title: 'হেল্প সেন্টার',
               ontap: () {
                 Get.to(() => const HelpCenterScreen());
               },
             ),
             buildProfileTile(
               image: AssetsIcons.privacy,
-              title: 'Privacy policy',
+              title: 'প্রাইভেসি পলিসি',
               ontap: () {
                 EasyLauncher.url(url: privacyPolicy);
               },
@@ -60,7 +60,7 @@ class SettingsScreen extends StatelessWidget {
             // ),
             buildProfileTile(
               image: AssetsIcons.version,
-              title: 'App Version',
+              title: 'অ্যাপ ভার্সন',
               ontap: () {
                 AppVersionHelper.showAppVersionDialog(context);
               },
@@ -68,12 +68,12 @@ class SettingsScreen extends StatelessWidget {
 
             buildProfileTile(
               image: AssetsIcons.feedback,
-              title: 'Feedback',
+              title: 'ফিডব্যাক',
               ontap: () {},
             ),
             buildProfileTile(
               image: AssetsIcons.share,
-              title: 'Share App',
+              title: 'শেয়ার অ্যাপ',
               ontap: () {
                 Share.share(
                   'Check out Din Guide – A beautiful Islamic app 🌙\n',
